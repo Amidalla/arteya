@@ -1,0 +1,139 @@
+@use "./colors.scss" as c;
+@use "../styles/mixins.scss" as *;
+
+.hero {
+
+  &__slider {
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+
+    .swiper-slide {
+      width: 100%;
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__pagination {
+    position: absolute;
+    bottom: 30px !important;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    .swiper-pagination-bullet {
+      width: 8px;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.4);
+      opacity: 1;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: rgba(255, 255, 255, 1);
+      }
+
+      &.swiper-pagination-bullet-active {
+        width: 24px;
+        height: 8px;
+        background: rgba(255, 255, 255, 1);
+        border-radius: 8px;
+      }
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: c.$white;
+    z-index: 5;
+  }
+
+  &__title {
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 130%;
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    max-width: 347px;
+    margin: 0 auto;
+  }
+}
+
+.catalog {
+    padding-top: 44px;
+    padding-bottom: 44px;
+    background: #F9F9F9;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 12px;
+    row-gap: 40px;
+  }
+
+  &__text {
+    margin-top: 34px;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 30px;
+    color: c.$green;
+    text-align: center;
+  }
+
+  .catalog-card {
+    box-shadow: 0 16px 16px 0 #00000008;
+    transition: all 0.5s ease;
+
+    &:hover {
+      box-shadow: 0px 2px 27.9px 0px rgba(168, 168, 168, .7215686275);
+    }
+
+    &__media {
+      padding: 4px 4px 0 4px;
+      max-height: 287px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    &__content {
+      height: 60px;
+      padding: 12px 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      color: c.$dark-grey;
+    }
+  }
+}

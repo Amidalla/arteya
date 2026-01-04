@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="ru">
+<include src="layout/head.html"></include>
+<body>
+<header class="header">
+    <div class="container header__inner">
+        <div class="header__top">
+            <div class="header__logo">
+               <a href="#"><img class="lazy" data-src="assets/images/header-logo.svg" alt=""></a>
+            </div>
+            <nav class="header__nav">
+                <ul class="header__list">
+                    <li class="header__item">
+                        <a href="#" class="header__link">О компании</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="#" class="header__link">Портфолио</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__contacts">
+                <a class="phone-link" href="tel:+78125665050">+7 (812) 566-50-50</a>
+                <a class="mail-link" href="mailto:zakaz@arteya.pro">zakaz@arteya.pro</a>
+            </div>
+            <a href="#" class="header__btn color-btn call-btn">
+                Заказать звонок
+            </a>
+        </div>
+        <div class="header__bottom">
+            <a href="#" class="header__btn color-btn catalog-btn">
+                <img class="lazy" data-src="assets/images/double-burger.svg" alt="">
+                <span>Каталог</span>
+            </a>
+            <div class="search">
+                <div class="search__inner">
+                    <form class="search__form">
+                        <input type="search" placeholder="Поиск" name="q" class="search__input">
+                        <img class="lazy search-img" data-src="assets/images/search.svg" alt="">
+                    </form>
+                </div>
+            </div>
+            <div class="header__wrapper">
+                <a href="#" class="header__user">
+                    <include src="assets/svg/user-icon.html"></include>
+                    <span>Войти</span>
+                </a>
+                <a href="#" class="header__comparison">
+                    <include src="assets/svg/comparison-icon.html"></include>
+                    <span>Сравнение</span>
+                    <span class="counter">2</span>
+                </a>
+                <a href="#" class="header__basket">
+                    <include src="assets/svg/basket-icon.html"></include>
+                    <span>Корзина</span>
+                    <span class="counter">2</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <h1 class="visually-hidden">
+        Создаём офисное пространство - дизайн проекты бесплатно
+    </h1>
+   <section class="section hero">
+       <div class="hero__slider swiper">
+           <div class="swiper-wrapper">
+               <div class="swiper-slide">
+                   <img class="lazy" data-src="assets/images/hero1.jpg" alt="'">
+                   <div class="hero__content">
+                       <p class="hero__title">Создаём<br>
+                           офисное пространство</p>
+                       <p class="hero__text">Какой-то подстрочник</p>
+                       <a href="#" class="hero__btn color-btn order-button">Заказать дизайн-проект бесплатно</a>
+                   </div>
+               </div>
+               <div class="swiper-slide">
+                   <img class="lazy" data-src="assets/images/hero1.jpg" alt="'">
+                   <div class="hero__content">
+                       <p class="hero__title">Создаём<br>
+                           офисное пространство</p>
+                       <p class="hero__text">Какой-то подстрочник</p>
+                       <a href="#" class="hero__btn color-btn order-button">Заказать дизайн-проект бесплатно</a>
+                   </div>
+               </div>
+               <div class="swiper-slide">
+                   <img class="lazy" data-src="assets/images/hero1.jpg" alt="'">
+                   <div class="hero__content">
+                       <p class="hero__title">
+                           Создаём<br>
+                           офисное пространство
+                       </p>
+                       <p class="hero__text">Какой-то подстрочник</p>
+                       <a href="#" class="hero__btn color-btn order-button">Заказать дизайн-проект бесплатно</a>
+                   </div>
+               </div>
+           </div>
+           <div class="hero__pagination"></div>
+       </div>
+   </section>
+    <section class="section catalog">
+        <div class="container">
+            <h2>Каталог</h2>
+            <ul class="catalog__list">
+                <include src="layout/template/card/catalog-card.html">
+                    {
+                    "link": "#",
+                    "image": "assets/images/catalog1.jpg",
+                    "alt": "Кабинеты руководителей",
+                    "title": "Кабинеты руководителей"
+                    }
+                </include>
+                <include src="layout/template/card/catalog-card.html">
+                    {
+                    "link": "#",
+                    "image": "assets/images/catalog2.jpg",
+                    "alt": "Мебель для переговорных",
+                    "title": "Мебель для переговорных"
+                    }
+                </include>
+                <include src="layout/template/card/catalog-card.html">
+                    {
+                    "link": "#",
+                    "image": "assets/images/catalog3.jpg",
+                    "alt": "Мебель для персонала",
+                    "title": "Мебель для персонала"
+                    }
+                </include>
+                <include src="layout/template/card/catalog-card.html">
+                    {
+                    "link": "#",
+                    "image": "assets/images/catalog4.jpg",
+                    "alt": "Специальные предложения",
+                    "title": "Специальные предложения"
+                    }
+                </include>
+                <include src="layout/template/card/catalog-card.html">
+                    {
+                    "link": "#",
+                    "image": "assets/images/catalog5.jpg",
+                    "alt": "Стойки ресепшен",
+                    "title": "Стойки ресепшен"
+                    }
+                </include>
+                <include src="layout/template/card/catalog-card.html">
+                    {
+                    "link": "#",
+                    "image": "assets/images/catalog6.jpg",
+                    "alt": "Судебная мебель",
+                    "title": "Судебная мебель"
+                    }
+                </include>
+                <include src="layout/template/card/catalog-card.html">
+                    {
+                    "link": "#",
+                    "image": "assets/images/catalog7.jpg",
+                    "alt": "Системы хранения",
+                    "title": "Системы хранения"
+                    }
+                </include>
+                <include src="layout/template/card/catalog-card.html">
+                    {
+                    "link": "#",
+                    "image": "assets/images/catalog8.jpg",
+                    "alt": "Экраны и перегородки",
+                    "title": "Экраны и перегородки"
+                    }
+                </include>
+                <include src="layout/template/card/catalog-card.html">
+                    {
+                    "link": "#",
+                    "image": "assets/images/catalog9.jpg",
+                    "alt": "Для дома и гостиниц",
+                    "title": "Для дома и гостиниц"
+                    }
+                </include>
+                <include src="layout/template/card/catalog-card.html">
+                    {
+                    "link": "#",
+                    "image": "assets/images/catalog10.jpg",
+                    "alt": "Мягкая мебель",
+                    "title": "Мягкая мебель"
+                    }
+                </include>
+                <include src="layout/template/card/catalog-card.html">
+                    {
+                    "link": "#",
+                    "image": "assets/images/catalog11.jpg",
+                    "alt": "Журнальные столы",
+                    "title": "Журнальные столы"
+                    }
+                </include>
+                <include src="layout/template/card/catalog-card.html">
+                    {
+                    "link": "#",
+                    "image": "assets/images/catalog12.jpg",
+                    "alt": "Кресла",
+                    "title": "Кресла"
+                    }
+                </include>
+            </ul>
+            <p class="catalog__text">
+                Также принимаем заказы на разработку мебели по индивидуальным размерам.
+            </p>
+        </div>
+    </section>
+</main>
+<!--<include src="layout/footer.html"></include>-->
+<!--<include src="layout/modals.html"></include>-->
+</body>
+</html>
