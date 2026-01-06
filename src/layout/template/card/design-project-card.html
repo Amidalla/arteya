@@ -1,0 +1,21 @@
+<li class="design-project__card">
+    <a class="design-project__link" href="{{ link }}">
+        <div class="design-project__slider swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img class="lazy" data-src="{{ image1 }}" alt="{{ title }}">
+                </div>
+                <div class="swiper-slide">
+                    <img class="lazy" data-src="{{ image2 }}" alt="{{ title }}">
+                </div>
+                <div class="swiper-slide">
+                    <img class="lazy" data-src="{{ image3 }}" alt="{{ title }}">
+                </div>
+            </div>
+            <div class="design-project__pagination"></div>
+        </div>
+        <h3>{{ title }}</h3>
+        <p class="design-project__text">{{ description }}</p>
+        <button type="button" class="watch-project-btn color-btn">Посмотреть проект</button>
+    </a>
+</li>
