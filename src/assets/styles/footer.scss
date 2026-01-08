@@ -6,15 +6,44 @@
   padding-top: 60px;
   padding-bottom: 60px;
 
+  @media (max-width: 1050px) {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
   &__top {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin-bottom: 32px;
+
+    @media (max-width: 1299px) {
+      grid-template-columns: 181px 1fr 330px;
+      gap: 50px;
+    }
+
+    @media (max-width: 1050px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 37px;
+    }
+  }
+
+  &__logo {
+    @media (max-width: 1299px) {
+      max-width: 181px;
+    }
   }
 
   &__list {
     display: flex;
     gap: 36px;
+
+    @media (max-width: 1050px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
   }
 
   &__link {
@@ -34,12 +63,18 @@
     align-items: center;
     justify-content: flex-end;
 
+    @media (max-width: 460px) {
+      flex-direction: column;
+      gap: 20px;
+    }
+
     a {
       color: c.$gold;
       display: inline-block;
       font-size: 16px;
       font-weight: 500;
       line-height: 24px;
+
 
       &:hover {
         text-decoration: underline;
@@ -49,16 +84,37 @@
     .phone-link {
       padding-right: 15px;
       border-right: 2px solid c.$gold;
+
+      @media (max-width: 460px) {
+        padding: 0;
+        border: none;
+      }
     }
 
     .mail-link {
       padding-left: 15px;
+
+      @media (max-width: 460px) {
+        padding: 0;
+      }
     }
   }
 
   &__bottom {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
+    @media (max-width: 1299px) {
+      grid-template-columns: 181px 1fr 330px;
+      gap: 50px;
+    }
+
+    @media (max-width: 1050px) {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 37px;
+    }
   }
 
   &__info {
@@ -73,11 +129,20 @@
     flex-direction: column;
     gap: 4px;
 
+    @media (max-width: 460px) {
+      max-width: 308px;
+      gap: 20px;
+    }
+
     a {
       color: c.$gold;
       font-size: 16px;
       font-weight: 400;
       line-height: 24px;
+
+      @media (max-width: 1050px) {
+        text-align: center;
+      }
 
       &:hover {
         text-decoration: underline;
@@ -126,6 +191,10 @@
     padding: 3px 12px;
     max-width: 145px;
     height: 30px;
+
+    @media (max-width: 460px) {
+      display: none;
+    }
 
     &:hover {
      background: #F4E8DF;
