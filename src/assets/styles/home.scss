@@ -5,6 +5,10 @@
   min-height: 100vh;
   
   @media (max-width: 1299px) {
+    min-height: 700px;
+  }
+
+  @media (max-width: 1000px) {
     min-height: 560px;
   }
 
@@ -13,6 +17,10 @@
     height: 100vh;
 
     @media (max-width: 1299px) {
+      height: 700px;
+    }
+
+    @media (max-width: 1000px) {
       height: 560px;
     }
 
@@ -22,6 +30,10 @@
       height: 100vh;
 
       @media (max-width: 1299px) {
+        height: 700px;
+      }
+
+      @media (max-width: 1000px) {
         height: 560px;
       }
 
@@ -114,11 +126,33 @@
     padding-bottom: 44px;
     background: #F9F9F9;
 
+  @media (max-width: 1299px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  @media (max-width: 1000px) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
   &__list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 12px;
     row-gap: 40px;
+
+    @media (max-width: 1299px) {
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 20px;
+    }
+    @media (max-width: 850px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 550px) {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 10px;
+    }
   }
 
   &__text {
@@ -128,6 +162,12 @@
     line-height: 30px;
     color: c.$green;
     text-align: center;
+    
+    @media (max-width: 1299px) {
+      margin-top: 20px;
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
 
   .catalog-card {
@@ -143,6 +183,10 @@
     &__media {
       padding: 4px 4px 0 4px;
       max-height: 287px;
+
+      @media (max-width: 550px) {
+        max-height: 360px;
+      }
 
       img {
         width: 100%;
