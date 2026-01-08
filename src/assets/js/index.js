@@ -14,6 +14,7 @@ import IMask from 'imask';
 import { SlidersInit } from './sliders.js';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { InitMobileMenu } from './modals.js';
 
 Swiper.use([Pagination, Navigation, Autoplay, Thumbs, EffectFade]);
 
@@ -63,11 +64,12 @@ function initPhoneMasks() {
     });
 }
 
-
 function initAnimations() {
+    // Проверяем ширину экрана
+    const isMobile = window.innerWidth <= 1299;
+
     AOS.init({
-        // Глобальные настройки
-        disable: false,
+        disable: isMobile ? true : false,
         startEvent: 'DOMContentLoaded',
         initClassName: 'aos-init',
         animatedClassName: 'aos-animate',
@@ -75,7 +77,6 @@ function initAnimations() {
         disableMutationObserver: false,
         debounceDelay: 50,
         throttleDelay: 99,
-
 
         offset: 500,
         delay: 0,
@@ -86,7 +87,6 @@ function initAnimations() {
         anchorPlacement: 'top-bottom',
     });
 
-
     const lazyLoadInstance = new LazyLoad({
         callback_loaded: (el) => {
             AOS.refresh();
@@ -94,8 +94,11 @@ function initAnimations() {
     });
 }
 
-
 function initStaggeredAnimations() {
+
+    if (window.innerWidth <= 1299) {
+        return;
+    }
 
     const staggerContainers = document.querySelectorAll('[data-aos-stagger]');
 
@@ -111,15 +114,32 @@ function initStaggeredAnimations() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', function() {
 
+function handleResize() {
+    if (window.innerWidth <= 1299) {
+
+        if (AOS) {
+            AOS.refreshHard();
+        }
+    } else {
+
+        if (AOS) {
+            AOS.refresh();
+        }
+        initStaggeredAnimations();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
     initAnimations();
 
     const lazyLoadInstance = new LazyLoad();
     SlidersInit();
 
 
-    initStaggeredAnimations();
+    if (window.innerWidth > 1299) {
+        initStaggeredAnimations();
+    }
 
     initPhoneMasks();
 
@@ -131,11 +151,20 @@ document.addEventListener('DOMContentLoaded', function() {
         },
     });
 
+    InitMobileMenu();
+
+
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(handleResize, 250);
+    });
 
     document.addEventListener('contentLoaded', function() {
-        AOS.refresh();
+        if (window.innerWidth > 1299) {
+            AOS.refresh();
+        }
     });
 });
-
 
 export { initAnimations, initStaggeredAnimations };
