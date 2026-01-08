@@ -18,7 +18,93 @@ import { InitMobileMenu } from './modals.js';
 
 Swiper.use([Pagination, Navigation, Autoplay, Thumbs, EffectFade]);
 
+function initRedStarsInPlaceholders() {
+    const requiredInputs = document.querySelectorAll('input[required], textarea[required]');
+
+    requiredInputs.forEach(input => {
+        const currentPlaceholder = input.getAttribute('placeholder') || '';
+
+        if (currentPlaceholder && !currentPlaceholder.includes('*')) {
+
+            const container = document.createElement('div');
+            container.className = 'placeholder-with-star-container';
+            container.style.position = 'relative';
+            container.style.width = '100%';
+
+
+            input.parentNode.insertBefore(container, input);
+            container.appendChild(input);
+
+
+            const pseudoPlaceholder = document.createElement('div');
+            pseudoPlaceholder.className = 'pseudo-placeholder';
+            pseudoPlaceholder.innerHTML = currentPlaceholder + ' <span class="red-star">*</span>';
+            pseudoPlaceholder.style.cssText = `
+                position: absolute;
+                left: ${getComputedStyle(input).paddingLeft || '10px'};
+                top: 50%;
+                transform: translateY(-50%);
+                color: #999;
+                pointer-events: none;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: calc(100% - 20px);
+                z-index: 5;
+                font-family: ${getComputedStyle(input).fontFamily};
+                font-size: ${getComputedStyle(input).fontSize};
+                line-height: ${getComputedStyle(input).lineHeight};
+                transition: opacity 0.2s ease;
+                opacity: 1;
+            `;
+
+            container.appendChild(pseudoPlaceholder);
+
+
+            input.setAttribute('placeholder', '');
+
+
+            input.addEventListener('focus', () => {
+                pseudoPlaceholder.style.opacity = '0';
+            });
+
+            input.addEventListener('blur', () => {
+
+                let isEmpty = true;
+
+                if (input.type === 'tel' || input.name === 'tel' || input.hasAttribute('data-phone-input')) {
+
+                    const digits = input.value.replace(/\D/g, '');
+                    isEmpty = digits.length <= 1 || digits === '7';
+                } else {
+                    isEmpty = !input.value.trim();
+                }
+
+                pseudoPlaceholder.style.opacity = isEmpty ? '1' : '0';
+            });
+
+
+            setTimeout(() => {
+                if (input.type === 'tel' || input.name === 'tel' || input.hasAttribute('data-phone-input')) {
+                    const digits = input.value.replace(/\D/g, '');
+                    pseudoPlaceholder.style.opacity =
+                        (digits.length > 1 && digits !== '7') ? '0' : '1';
+                } else {
+                    pseudoPlaceholder.style.opacity = input.value.trim() ? '0' : '1';
+                }
+            }, 0);
+
+
+            if (input.tagName === 'TEXTAREA') {
+                pseudoPlaceholder.style.top = '15px';
+                pseudoPlaceholder.style.transform = 'none';
+            }
+        }
+    });
+}
+
 function initPhoneMasks() {
+
     const phoneInputs = document.querySelectorAll(`
         input[type="tel"][name="tel"],
         input[type="tel"][data-phone-input]
@@ -65,7 +151,7 @@ function initPhoneMasks() {
 }
 
 function initAnimations() {
-    // Проверяем ширину экрана
+
     const isMobile = window.innerWidth <= 1299;
 
     AOS.init({
@@ -95,7 +181,6 @@ function initAnimations() {
 }
 
 function initStaggeredAnimations() {
-
     if (window.innerWidth <= 1299) {
         return;
     }
@@ -114,15 +199,12 @@ function initStaggeredAnimations() {
     });
 }
 
-
 function handleResize() {
     if (window.innerWidth <= 1299) {
-
         if (AOS) {
             AOS.refreshHard();
         }
     } else {
-
         if (AOS) {
             AOS.refresh();
         }
@@ -136,10 +218,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const lazyLoadInstance = new LazyLoad();
     SlidersInit();
 
-
     if (window.innerWidth > 1299) {
         initStaggeredAnimations();
     }
+
+
+    initRedStarsInPlaceholders();
 
     initPhoneMasks();
 
@@ -152,7 +236,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     InitMobileMenu();
-
 
     let resizeTimeout;
     window.addEventListener('resize', function() {

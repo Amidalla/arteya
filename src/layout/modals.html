@@ -77,4 +77,37 @@
         </div>
     </div>
 </div>
+    <div class="call-modal">
+        <div class="call-modal__inner">
+            <div class="call-modal__title">Заказ звонка</div>
+            <div class="call-modal__form">
+                <form class="call-form modal-form">
+                    <fieldset>
+                        <label>
+                            <input type="text" name="name" placeholder="Ваше имя">
+                        </label>
+                        <label>
+                            <input type="tel" name="tel" placeholder="Телефон" data-phone-input required>
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="checkbox" required="">
+                            <span class="checkbox-text">
+                            <span>Я подтверждаю своё согласие на <a href="#">обработку персональных данных</a> в соответствии с <a href="#">политикой конфиденциальности</a></span>
+                        </span>
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <button class="submit-btn color-btn">
+                            Отправить
+                        </button>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="call-modal__close">
+                <include src="assets/svg/modal_close.html"></include>
+            </div>
+        </div>
+    </div>
 <div class="overlay"></div>
