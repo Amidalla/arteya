@@ -322,11 +322,30 @@
 
   @include slider-pagination;
 
+  @media (max-width: 1299px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  @media (max-width: 1000px) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
   &__list {
     display: grid;
     width: 100%;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
+
+    @media (max-width: 1000px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @media (max-width: 650px) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 10px;
+    }
+
   }
 
   &__card {
@@ -367,6 +386,10 @@
     height: 375px;
     position: relative;
     margin-bottom: 12px;
+    
+    @media (max-width: 1299px) {
+      height: 260px;
+    }
 
     img {
       width: 100%;
@@ -409,6 +432,16 @@
 .partners {
   padding-top: 60px;
   padding-bottom: 60px;
+
+  @media (max-width: 1299px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  @media (max-width: 1000px) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 
   &__list {
     display: flex;
