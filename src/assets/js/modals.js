@@ -11,7 +11,7 @@ export function InitMobileMenu() {
     const orderBtns = document.querySelectorAll('.order-button');
 
     const authModal = document.querySelector('.authorization-modal');
-    const authBtns = document.querySelectorAll('.header__user, .header__user-link');
+    const authBtns = document.querySelectorAll('.header__user, .header__user-link, .mobile-menu__user');
 
     if (!burgerBtn || !mobileMenu || !overlay) {
         return;
