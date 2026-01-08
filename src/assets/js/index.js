@@ -12,6 +12,8 @@ import { Fancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import IMask from 'imask';
 import { SlidersInit } from './sliders.js';
+import AOS from 'aos'; // Добавляем импорт AOS
+import 'aos/dist/aos.css'; // Добавляем стили AOS
 
 Swiper.use([Pagination, Navigation, Autoplay, Thumbs, EffectFade]);
 
@@ -61,10 +63,63 @@ function initPhoneMasks() {
     });
 }
 
+
+function initAnimations() {
+    AOS.init({
+        // Глобальные настройки
+        disable: false,
+        startEvent: 'DOMContentLoaded',
+        initClassName: 'aos-init',
+        animatedClassName: 'aos-animate',
+        useClassNames: false,
+        disableMutationObserver: false,
+        debounceDelay: 50,
+        throttleDelay: 99,
+
+
+        offset: 600,
+        delay: 0,
+        duration: 500,
+        easing: 'ease-out-cubic',
+        once: true,
+        mirror: false,
+        anchorPlacement: 'top-bottom',
+    });
+
+
+    const lazyLoadInstance = new LazyLoad({
+        callback_loaded: (el) => {
+            AOS.refresh();
+        }
+    });
+}
+
+
+function initStaggeredAnimations() {
+
+    const staggerContainers = document.querySelectorAll('[data-aos-stagger]');
+
+    staggerContainers.forEach((container, containerIndex) => {
+        const items = container.querySelectorAll('[data-aos-item]');
+        const delayStep = container.dataset.aosStaggerDelay || 100;
+        const animationType = container.dataset.aosStaggerAnimation || 'fade-up';
+
+        items.forEach((item, index) => {
+            item.setAttribute('data-aos', animationType);
+            item.setAttribute('data-aos-delay', index * delayStep);
+        });
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
+
+    initAnimations();
+
     const lazyLoadInstance = new LazyLoad();
     SlidersInit();
 
+
+    initStaggeredAnimations();
 
     initPhoneMasks();
 
@@ -75,4 +130,12 @@ document.addEventListener('DOMContentLoaded', function() {
             zoom: true,
         },
     });
+
+
+    document.addEventListener('contentLoaded', function() {
+        AOS.refresh();
+    });
 });
+
+
+export { initAnimations, initStaggeredAnimations };
