@@ -10,6 +10,9 @@ export function InitMobileMenu() {
     const designModal = document.querySelector('.design-modal');
     const orderBtns = document.querySelectorAll('.order-button');
 
+    const authModal = document.querySelector('.authorization-modal');
+    const authBtns = document.querySelectorAll('.header__user, .header__user-link');
+
     if (!burgerBtn || !mobileMenu || !overlay) {
         return;
     }
@@ -17,6 +20,7 @@ export function InitMobileMenu() {
     let isMobileMenuOpen = false;
     let isCallModalOpen = false;
     let isDesignModalOpen = false;
+    let isAuthModalOpen = false;
     let scrollPosition = 0;
 
     function disableBodyScroll() {
@@ -55,8 +59,9 @@ export function InitMobileMenu() {
     function openMobileMenu() {
         if (isCallModalOpen) closeCallModal();
         if (isDesignModalOpen) closeDesignModal();
+        if (isAuthModalOpen) closeAuthModal();
 
-        if (!isCallModalOpen && !isDesignModalOpen) {
+        if (!isCallModalOpen && !isDesignModalOpen && !isAuthModalOpen) {
             disableBodyScroll();
         }
 
@@ -66,7 +71,7 @@ export function InitMobileMenu() {
     }
 
     function closeMobileMenu() {
-        if (!isCallModalOpen && !isDesignModalOpen) {
+        if (!isCallModalOpen && !isDesignModalOpen && !isAuthModalOpen) {
             enableBodyScroll();
         }
 
@@ -78,6 +83,7 @@ export function InitMobileMenu() {
     function openCallModal() {
         if (isMobileMenuOpen) closeMobileMenu();
         if (isDesignModalOpen) closeDesignModal();
+        if (isAuthModalOpen) closeAuthModal();
 
         disableBodyScroll();
 
@@ -87,7 +93,7 @@ export function InitMobileMenu() {
     }
 
     function closeCallModal() {
-        if (!isMobileMenuOpen && !isDesignModalOpen) {
+        if (!isMobileMenuOpen && !isDesignModalOpen && !isAuthModalOpen) {
             enableBodyScroll();
         }
 
@@ -99,6 +105,7 @@ export function InitMobileMenu() {
     function openDesignModal() {
         if (isMobileMenuOpen) closeMobileMenu();
         if (isCallModalOpen) closeCallModal();
+        if (isAuthModalOpen) closeAuthModal();
 
         disableBodyScroll();
 
@@ -108,7 +115,7 @@ export function InitMobileMenu() {
     }
 
     function closeDesignModal() {
-        if (!isMobileMenuOpen && !isCallModalOpen) {
+        if (!isMobileMenuOpen && !isCallModalOpen && !isAuthModalOpen) {
             enableBodyScroll();
         }
 
@@ -117,6 +124,27 @@ export function InitMobileMenu() {
         isDesignModalOpen = false;
     }
 
+    function openAuthModal() {
+        if (isMobileMenuOpen) closeMobileMenu();
+        if (isCallModalOpen) closeCallModal();
+        if (isDesignModalOpen) closeDesignModal();
+
+        disableBodyScroll();
+
+        authModal.classList.add('active');
+        overlay.classList.add('active');
+        isAuthModalOpen = true;
+    }
+
+    function closeAuthModal() {
+        if (!isMobileMenuOpen && !isCallModalOpen && !isDesignModalOpen) {
+            enableBodyScroll();
+        }
+
+        authModal.classList.remove('active');
+        overlay.classList.remove('active');
+        isAuthModalOpen = false;
+    }
 
     burgerBtn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -125,13 +153,12 @@ export function InitMobileMenu() {
 
     closeBtn.addEventListener('click', closeMobileMenu);
 
-
     overlay.addEventListener('click', (e) => {
         if (isMobileMenuOpen) closeMobileMenu();
         if (isCallModalOpen) closeCallModal();
         if (isDesignModalOpen) closeDesignModal();
+        if (isAuthModalOpen) closeAuthModal();
     });
-
 
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
@@ -139,17 +166,17 @@ export function InitMobileMenu() {
                 closeDesignModal();
             } else if (isCallModalOpen) {
                 closeCallModal();
+            } else if (isAuthModalOpen) {
+                closeAuthModal();
             } else if (isMobileMenuOpen) {
                 closeMobileMenu();
             }
         }
     });
 
-
     mobileMenu.addEventListener('click', (e) => {
         e.stopPropagation();
     });
-
 
     if (callModal && callBtns.length > 0) {
         callBtns.forEach(callBtn => {
@@ -169,7 +196,6 @@ export function InitMobileMenu() {
         });
     }
 
-
     if (designModal && orderBtns.length > 0) {
         orderBtns.forEach(orderBtn => {
             orderBtn.addEventListener('click', (e) => {
@@ -188,9 +214,27 @@ export function InitMobileMenu() {
         });
     }
 
+    if (authModal && authBtns.length > 0) {
+        authBtns.forEach(authBtn => {
+            authBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                openAuthModal();
+            });
+        });
+
+        const authModalClose = authModal.querySelector('.authorization-modal__close');
+        if (authModalClose) {
+            authModalClose.addEventListener('click', closeAuthModal);
+        }
+
+        authModal.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+    }
 
     window.addEventListener('resize', () => {
-        if (isMobileMenuOpen || isCallModalOpen || isDesignModalOpen) {
+        if (isMobileMenuOpen || isCallModalOpen || isDesignModalOpen || isAuthModalOpen) {
             const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
             if (scrollbarWidth > 0) {
                 document.body.style.paddingRight = `${scrollbarWidth}px`;

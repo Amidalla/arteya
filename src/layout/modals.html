@@ -152,4 +152,36 @@
         </div>
     </div>
 </div>
+<div class="authorization-modal">
+    <div class="authorization-modal__inner">
+        <div class="authorization-modal__title">Личный кабинет</div>
+        <p class="authorization-modal__text">Сохраняйте реквизиты, отслеживайте заказы и получайте персональные предложения.</p>
+        <div class="authorization-modal__form">
+            <form class="authorization-form modal-form">
+                <fieldset>
+                    <label>
+                        <include src="assets/svg/user-grey.html"></include>
+                        <input type="email" name="email" placeholder="Электронная почта" required>
+                    </label>
+                    <label>
+                        <include src="assets/svg/lock.html"></include>
+                        <input type="password" name="password"  placeholder="Пароль" required>
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <button class="submit-btn color-btn">
+                        Войти
+                    </button>
+                </fieldset>
+            </form>
+        </div>
+        <div class="authorization-modal__links">
+            <a href="#" class="registration-link">Регистрация</a>
+            <a href="#" class="password-recovery">Восстановить пароль</a>
+        </div>
+        <div class="authorization-modal__close">
+            <include src="assets/svg/modal_close.html"></include>
+        </div>
+    </div>
+</div>
 <div class="overlay"></div>
