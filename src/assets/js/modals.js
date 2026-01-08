@@ -4,9 +4,11 @@ export function InitMobileMenu() {
     const overlay = document.querySelector('.overlay');
     const closeBtn = document.querySelector('.mobile-menu__close');
 
-
     const callModal = document.querySelector('.call-modal');
     const callBtns = document.querySelectorAll('.call-btn');
+
+    const designModal = document.querySelector('.design-modal');
+    const orderBtns = document.querySelectorAll('.order-button');
 
     if (!burgerBtn || !mobileMenu || !overlay) {
         return;
@@ -14,26 +16,20 @@ export function InitMobileMenu() {
 
     let isMobileMenuOpen = false;
     let isCallModalOpen = false;
+    let isDesignModalOpen = false;
     let scrollPosition = 0;
 
     function disableBodyScroll() {
-
         scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-
-
         const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-
 
         document.body.style.position = 'fixed';
         document.body.style.top = `-${scrollPosition}px`;
         document.body.style.left = '0';
         document.body.style.width = '100%';
 
-
         if (scrollbarWidth > 0) {
             document.body.style.paddingRight = `${scrollbarWidth}px`;
-
-
             document.querySelectorAll('.header, .header-fixed, [data-fixed]').forEach(el => {
                 const currentPadding = window.getComputedStyle(el).paddingRight;
                 const currentPaddingValue = parseFloat(currentPadding) || 0;
@@ -43,16 +39,13 @@ export function InitMobileMenu() {
     }
 
     function enableBodyScroll() {
-
         document.body.style.position = '';
         document.body.style.top = '';
         document.body.style.left = '';
         document.body.style.width = '';
         document.body.style.paddingRight = '';
 
-
         window.scrollTo(0, scrollPosition);
-
 
         document.querySelectorAll('.header, .header-fixed, [data-fixed]').forEach(el => {
             el.style.paddingRight = '';
@@ -60,13 +53,10 @@ export function InitMobileMenu() {
     }
 
     function openMobileMenu() {
+        if (isCallModalOpen) closeCallModal();
+        if (isDesignModalOpen) closeDesignModal();
 
-        if (isCallModalOpen) {
-            closeCallModal();
-        }
-
-
-        if (!isCallModalOpen) {
+        if (!isCallModalOpen && !isDesignModalOpen) {
             disableBodyScroll();
         }
 
@@ -76,8 +66,7 @@ export function InitMobileMenu() {
     }
 
     function closeMobileMenu() {
-
-        if (!isCallModalOpen) {
+        if (!isCallModalOpen && !isDesignModalOpen) {
             enableBodyScroll();
         }
 
@@ -87,11 +76,8 @@ export function InitMobileMenu() {
     }
 
     function openCallModal() {
-
-        if (isMobileMenuOpen) {
-            closeMobileMenu();
-        }
-
+        if (isMobileMenuOpen) closeMobileMenu();
+        if (isDesignModalOpen) closeDesignModal();
 
         disableBodyScroll();
 
@@ -101,8 +87,7 @@ export function InitMobileMenu() {
     }
 
     function closeCallModal() {
-
-        if (!isMobileMenuOpen) {
+        if (!isMobileMenuOpen && !isDesignModalOpen) {
             enableBodyScroll();
         }
 
@@ -110,6 +95,28 @@ export function InitMobileMenu() {
         overlay.classList.remove('active');
         isCallModalOpen = false;
     }
+
+    function openDesignModal() {
+        if (isMobileMenuOpen) closeMobileMenu();
+        if (isCallModalOpen) closeCallModal();
+
+        disableBodyScroll();
+
+        designModal.classList.add('active');
+        overlay.classList.add('active');
+        isDesignModalOpen = true;
+    }
+
+    function closeDesignModal() {
+        if (!isMobileMenuOpen && !isCallModalOpen) {
+            enableBodyScroll();
+        }
+
+        designModal.classList.remove('active');
+        overlay.classList.remove('active');
+        isDesignModalOpen = false;
+    }
+
 
     burgerBtn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -120,24 +127,24 @@ export function InitMobileMenu() {
 
 
     overlay.addEventListener('click', (e) => {
-        if (isMobileMenuOpen) {
-            closeMobileMenu();
-        }
-        if (isCallModalOpen) {
-            closeCallModal();
-        }
+        if (isMobileMenuOpen) closeMobileMenu();
+        if (isCallModalOpen) closeCallModal();
+        if (isDesignModalOpen) closeDesignModal();
     });
+
 
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
-
-            if (isCallModalOpen) {
+            if (isDesignModalOpen) {
+                closeDesignModal();
+            } else if (isCallModalOpen) {
                 closeCallModal();
             } else if (isMobileMenuOpen) {
                 closeMobileMenu();
             }
         }
     });
+
 
     mobileMenu.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -163,9 +170,27 @@ export function InitMobileMenu() {
     }
 
 
-    window.addEventListener('resize', () => {
-        if (isMobileMenuOpen || isCallModalOpen) {
+    if (designModal && orderBtns.length > 0) {
+        orderBtns.forEach(orderBtn => {
+            orderBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openDesignModal();
+            });
+        });
 
+        const designModalClose = designModal.querySelector('.design-modal__close');
+        if (designModalClose) {
+            designModalClose.addEventListener('click', closeDesignModal);
+        }
+
+        designModal.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+    }
+
+
+    window.addEventListener('resize', () => {
+        if (isMobileMenuOpen || isCallModalOpen || isDesignModalOpen) {
             const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
             if (scrollbarWidth > 0) {
                 document.body.style.paddingRight = `${scrollbarWidth}px`;
