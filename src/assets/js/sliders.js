@@ -88,11 +88,23 @@ export function SlidersInit() {
                     slidesPerView: 1.2,
                     spaceBetween: 15,
                 },
-                420: {
-                    slidesPerView: 2.2,
+                450: {
+                    slidesPerView: 1.5,
                     spaceBetween: 15,
                 },
-                700: {
+                550: {
+                    slidesPerView: 1.8,
+                    spaceBetween: 15,
+                },
+                650: {
+                    slidesPerView: 2.5,
+                    spaceBetween: 15,
+                },
+                750: {
+                    slidesPerView: 2.8,
+                    spaceBetween: 15,
+                },
+                950: {
                     slidesPerView: 3.2,
                     spaceBetween: 20,
                 },

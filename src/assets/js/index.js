@@ -12,8 +12,8 @@ import { Fancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import IMask from 'imask';
 import { SlidersInit } from './sliders.js';
-import AOS from 'aos'; // Добавляем импорт AOS
-import 'aos/dist/aos.css'; // Добавляем стили AOS
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 Swiper.use([Pagination, Navigation, Autoplay, Thumbs, EffectFade]);
 
