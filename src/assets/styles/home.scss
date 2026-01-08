@@ -449,11 +449,23 @@
     align-items: center;
     gap: 60px;
     margin-bottom: 40px;
+    flex-wrap: wrap;
+
+    @media (max-width: 1299px) {
+      column-gap: 13px;
+      row-gap: 1px;
+      margin-bottom: 20px;
+    }
   }
 
   &__item {
     width: 128px;
     height: 128px;
+
+    @media (max-width: 1299px) {
+      width: 98px;
+      height: 98px;
+    }
 
     img {
       width: 100%;
@@ -494,6 +506,22 @@
   display: grid;
   grid-template-columns: 50% 50%;
 
+  @media (max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: rgba(249, 249, 249, 1);
+  }
+
+  .mobile-title {
+    display: none;
+
+    @media (max-width: 1000px) {
+      display: block;
+    }
+  }
+
   &__media {
     img {
       width: 100%;
@@ -505,6 +533,20 @@
   &__text {
     padding: 60px 80px;
     background: rgba(249, 249, 249, 1);
+
+    @media (max-width: 1299px) {
+      padding: 40px;
+    }
+
+    @media (max-width: 1000px) {
+      padding: 20px;
+    }
+
+    h2 {
+      @media (max-width: 1000px) {
+        display: none;
+      }
+    }
 
     p {
       font-size: 16px;
@@ -522,6 +564,16 @@
 .main-form {
   padding-top: 60px;
   padding-bottom: 60px;
+
+  @media (max-width: 1299px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  @media (max-width: 1000px) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 
   .form-main {
     max-width: 482px;
@@ -639,4 +691,9 @@
   max-width: 186px;
   margin-right: auto;
   cursor: pointer;
+
+  @media (max-width: 450px) {
+    max-width: 100%;
+    width: 100%;
+  }
 }
