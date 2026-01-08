@@ -77,7 +77,7 @@ function initAnimations() {
         throttleDelay: 99,
 
 
-        offset: 600,
+        offset: 500,
         delay: 0,
         duration: 500,
         easing: 'ease-out-cubic',
