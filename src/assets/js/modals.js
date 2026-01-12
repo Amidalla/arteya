@@ -13,6 +13,10 @@ export function InitMobileMenu() {
     const authModal = document.querySelector('.authorization-modal');
     const authBtns = document.querySelectorAll('.header__user, .header__user-link, .mobile-menu__user');
 
+    const registrationModal = document.querySelector('.registration-modal');
+    const registrationLinks = document.querySelectorAll('.registration-link');
+    const registrationModalAuthLinks = document.querySelectorAll('.registration-modal__link');
+
     if (!burgerBtn || !mobileMenu || !overlay) {
         return;
     }
@@ -21,6 +25,7 @@ export function InitMobileMenu() {
     let isCallModalOpen = false;
     let isDesignModalOpen = false;
     let isAuthModalOpen = false;
+    let isRegistrationModalOpen = false;
     let scrollPosition = 0;
 
     function disableBodyScroll() {
@@ -60,8 +65,9 @@ export function InitMobileMenu() {
         if (isCallModalOpen) closeCallModal();
         if (isDesignModalOpen) closeDesignModal();
         if (isAuthModalOpen) closeAuthModal();
+        if (isRegistrationModalOpen) closeRegistrationModal();
 
-        if (!isCallModalOpen && !isDesignModalOpen && !isAuthModalOpen) {
+        if (!isCallModalOpen && !isDesignModalOpen && !isAuthModalOpen && !isRegistrationModalOpen) {
             disableBodyScroll();
         }
 
@@ -71,7 +77,7 @@ export function InitMobileMenu() {
     }
 
     function closeMobileMenu() {
-        if (!isCallModalOpen && !isDesignModalOpen && !isAuthModalOpen) {
+        if (!isCallModalOpen && !isDesignModalOpen && !isAuthModalOpen && !isRegistrationModalOpen) {
             enableBodyScroll();
         }
 
@@ -84,6 +90,7 @@ export function InitMobileMenu() {
         if (isMobileMenuOpen) closeMobileMenu();
         if (isDesignModalOpen) closeDesignModal();
         if (isAuthModalOpen) closeAuthModal();
+        if (isRegistrationModalOpen) closeRegistrationModal();
 
         disableBodyScroll();
 
@@ -93,7 +100,7 @@ export function InitMobileMenu() {
     }
 
     function closeCallModal() {
-        if (!isMobileMenuOpen && !isDesignModalOpen && !isAuthModalOpen) {
+        if (!isMobileMenuOpen && !isDesignModalOpen && !isAuthModalOpen && !isRegistrationModalOpen) {
             enableBodyScroll();
         }
 
@@ -106,6 +113,7 @@ export function InitMobileMenu() {
         if (isMobileMenuOpen) closeMobileMenu();
         if (isCallModalOpen) closeCallModal();
         if (isAuthModalOpen) closeAuthModal();
+        if (isRegistrationModalOpen) closeRegistrationModal();
 
         disableBodyScroll();
 
@@ -115,7 +123,7 @@ export function InitMobileMenu() {
     }
 
     function closeDesignModal() {
-        if (!isMobileMenuOpen && !isCallModalOpen && !isAuthModalOpen) {
+        if (!isMobileMenuOpen && !isCallModalOpen && !isAuthModalOpen && !isRegistrationModalOpen) {
             enableBodyScroll();
         }
 
@@ -128,6 +136,7 @@ export function InitMobileMenu() {
         if (isMobileMenuOpen) closeMobileMenu();
         if (isCallModalOpen) closeCallModal();
         if (isDesignModalOpen) closeDesignModal();
+        if (isRegistrationModalOpen) closeRegistrationModal();
 
         disableBodyScroll();
 
@@ -137,13 +146,36 @@ export function InitMobileMenu() {
     }
 
     function closeAuthModal() {
-        if (!isMobileMenuOpen && !isCallModalOpen && !isDesignModalOpen) {
+        if (!isMobileMenuOpen && !isCallModalOpen && !isDesignModalOpen && !isRegistrationModalOpen) {
             enableBodyScroll();
         }
 
         authModal.classList.remove('active');
         overlay.classList.remove('active');
         isAuthModalOpen = false;
+    }
+
+    function openRegistrationModal() {
+        if (isMobileMenuOpen) closeMobileMenu();
+        if (isCallModalOpen) closeCallModal();
+        if (isDesignModalOpen) closeDesignModal();
+        if (isAuthModalOpen) closeAuthModal();
+
+        disableBodyScroll();
+
+        registrationModal.classList.add('active');
+        overlay.classList.add('active');
+        isRegistrationModalOpen = true;
+    }
+
+    function closeRegistrationModal() {
+        if (!isMobileMenuOpen && !isCallModalOpen && !isDesignModalOpen && !isAuthModalOpen) {
+            enableBodyScroll();
+        }
+
+        registrationModal.classList.remove('active');
+        overlay.classList.remove('active');
+        isRegistrationModalOpen = false;
     }
 
     burgerBtn.addEventListener('click', (e) => {
@@ -158,6 +190,7 @@ export function InitMobileMenu() {
         if (isCallModalOpen) closeCallModal();
         if (isDesignModalOpen) closeDesignModal();
         if (isAuthModalOpen) closeAuthModal();
+        if (isRegistrationModalOpen) closeRegistrationModal();
     });
 
     document.addEventListener('keydown', (e) => {
@@ -168,6 +201,8 @@ export function InitMobileMenu() {
                 closeCallModal();
             } else if (isAuthModalOpen) {
                 closeAuthModal();
+            } else if (isRegistrationModalOpen) {
+                closeRegistrationModal();
             } else if (isMobileMenuOpen) {
                 closeMobileMenu();
             }
@@ -233,8 +268,37 @@ export function InitMobileMenu() {
         });
     }
 
+    if (registrationModal && registrationLinks.length > 0) {
+        registrationLinks.forEach(registrationLink => {
+            registrationLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                openRegistrationModal();
+            });
+        });
+
+        const registrationModalClose = registrationModal.querySelector('.registration-modal__close');
+        if (registrationModalClose) {
+            registrationModalClose.addEventListener('click', closeRegistrationModal);
+        }
+
+        registrationModal.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+    }
+
+    if (registrationModalAuthLinks.length > 0) {
+        registrationModalAuthLinks.forEach(authLink => {
+            authLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                openAuthModal();
+            });
+        });
+    }
+
     window.addEventListener('resize', () => {
-        if (isMobileMenuOpen || isCallModalOpen || isDesignModalOpen || isAuthModalOpen) {
+        if (isMobileMenuOpen || isCallModalOpen || isDesignModalOpen || isAuthModalOpen || isRegistrationModalOpen) {
             const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
             if (scrollbarWidth > 0) {
                 document.body.style.paddingRight = `${scrollbarWidth}px`;
