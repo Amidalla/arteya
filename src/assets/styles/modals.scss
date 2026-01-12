@@ -470,3 +470,98 @@
     }
   }
 }
+
+.registration-modal {
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1002;
+  opacity: 0;
+  max-height: 95vh;
+  overflow-y: auto;
+  visibility: hidden;
+
+  @media (max-width: 480px) {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  &.active {
+    transition: all .25s;
+    visibility: visible;
+    opacity: 1;
+  }
+
+
+  &__inner {
+    width: 414px;
+    padding: 20px 40px;
+    background: #FFFFFF;
+    position: relative;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 48px;
+    margin-bottom: 13px;
+    color: #2C2C2C;
+    text-align: center;
+  }
+
+  &__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+    &:hover {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__form {
+    fieldset {
+
+      .checkbox-label {
+        margin: 0;
+      }
+
+      label {
+        position: relative;
+
+        input[type="email"],
+        input[type="password"] {
+          @include transparent-input;
+        }
+
+        svg {
+          position: absolute;
+          left: 12px;
+          top: 12px;
+        }
+      }
+    }
+    .submit-btn {
+      margin-bottom: 13px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    color: c.$green;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

@@ -184,4 +184,55 @@
         </div>
     </div>
 </div>
+<div class="registration-modal">
+    <div class="registration-modal__inner">
+        <div class="registration-modal__title">Регистрация</div>
+        <div class="registration-modal__form">
+            <form class="registration-form modal-form">
+                <fieldset>
+                    <label>
+                        <input type="text" name="name" placeholder="Ваше имя">
+                    </label>
+                    <label>
+                        <input type="text" name="name" placeholder="Организация" required>
+                    </label>
+                    <label>
+                        <input type="email" name="email" placeholder="Электронная почта" required>
+                    </label>
+                    <label>
+                        <input type="tel" name="tel" placeholder="Телефон" data-phone-input required>
+                    </label>
+                    <label>
+                        <input type="password" name="password"  placeholder="Пароль" required>
+                    </label>
+                    <label>
+                        <input type="password" name="password-confirmation"  placeholder="Подтверждение пароля" required>
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <div class="captcha-container">
+                        <img class="lazy" data-src="assets/images/captcha.jpg" alt="">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="checkbox" required="">
+                        <span class="checkbox-text">
+                            <span>Я подтверждаю своё согласие на <a href="#">обработку персональных данных</a> в соответствии с <a href="#">политикой конфиденциальности</a></span>
+                        </span>
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <button class="submit-btn color-btn">
+                        Зарегистрироваться
+                    </button>
+                </fieldset>
+            </form>
+            <a href="#" class="registration-modal__link">Авторизация</a>
+        </div>
+        <div class="registration-modal__close">
+            <include src="assets/svg/modal_close.html"></include>
+        </div>
+    </div>
+</div>
 <div class="overlay"></div>
