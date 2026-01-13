@@ -249,3 +249,11 @@ header {
     }
   }
 }
+
+.inside-page-header {
+  width: 100%;
+  height: 256px;
+  position: relative;
+  background: url("../images/inside-page-header.jpg") no-repeat center;
+  background-size: cover;
+}

@@ -248,6 +248,7 @@
   &__item {
     display: flex;
     gap: 24px;
+    align-items: center;
 
     @media (max-width: 660px) {
       flex-direction: column;

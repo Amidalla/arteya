@@ -472,7 +472,6 @@
 }
 
 .registration-modal {
-
   position: fixed;
   top: 50%;
   left: 50%;
@@ -495,12 +494,16 @@
     opacity: 1;
   }
 
-
   &__inner {
     width: 414px;
     padding: 20px 40px;
     background: #FFFFFF;
     position: relative;
+
+    @media (max-width: 480px) {
+      width: 100%;
+      padding: 20px;
+    }
   }
 
   &__title {
