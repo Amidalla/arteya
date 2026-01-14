@@ -1,11 +1,9 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
 <include src="layout/head.html"></include>
 <body>
-     <div class="inside-page-header">
-        <include src="layout/header.html"></include>
-     </div>
-    <main>
+    <include src="layout/header.html"></include>
+    <main class="inside-page">
         <div class="breadcrumb">
             <div class="container">
                 <nav class="breadcrumb__inner">
@@ -30,10 +28,10 @@
                          <aside class="side-menu">
                              <ul class="side-menu__list">
                                  <li class="side-menu__item">
-                                     <div class="side-menu__link-wrapper">
-                                         <a href="#" class="side-menu__link">Кабинеты руководителей</a>
+                                     <a href="#" class="side-menu__link">
+                                         <span>Кабинеты руководителей</span>
                                          <span class="side-menu__arrow"></span>
-                                     </div>
+                                     </a>
                                      <ul class="side-menu__sublist">
                                          <li class="side-menu__subitem">
                                              <a href="#" class="side-menu__sublink">1</a>
@@ -47,9 +45,10 @@
                                      </ul>
                                  </li>
                                  <li class="side-menu__item">
-                                     <div class="side-menu__link-wrapper">
-                                         <a href="#" class="side-menu__link">Мебель для переговорных</a><span class="side-menu__arrow"></span>
-                                     </div>
+                                     <a href="#" class="side-menu__link">
+                                         <span>Мебель для переговорных</span>
+                                         <span class="side-menu__arrow"></span>
+                                     </a>
                                      <ul class="side-menu__sublist">
                                          <li class="side-menu__subitem">
                                              <a href="#" class="side-menu__sublink">1</a>
@@ -63,407 +62,648 @@
                                      </ul>
                                  </li>
                                  <li class="side-menu__item">
-                                     <div class="side-menu__link-wrapper">
-                                         <a href="#" class="side-menu__link">Мебель для персонала</a><span class="side-menu__arrow"></span>
-                                     </div>
+                                     <a href="#" class="side-menu__link">
+                                         <span>Мебель для персонала</span>
+                                         <span class="side-menu__arrow"></span>
+                                     </a>
                                      <ul class="side-menu__sublist">
                                          <li class="side-menu__subitem dropdown">
-                                             <div class="side-menu__sublink-wrapper">
-                                                 <a href="#" class="side-menu__sublink">STYLE PROJECT FUSION</a>
+                                             <a href="#" class="side-menu__sublink">
+                                                 <span>STYLE PROJECT FUSION</span>
                                                  <span class="side-menu__arrow"></span>
-                                             </div>
+                                             </a>
                                              <ul class="side-menu__additional-list">
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы операторские</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы операторские
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Рабочие станции</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Рабочие станции
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы переговорные</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы переговорные
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Приставные элементы</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Приставные элементы
+                                                     </a>
                                                  </li>
                                              </ul>
                                          </li>
                                          <li class="side-menu__subitem dropdown">
-                                             <div class="side-menu__sublink-wrapper">
-                                                 <a href="#" class="side-menu__sublink">Столы операторские</a>
+                                             <a href="#" class="side-menu__sublink">
+                                                 <span>Столы операторские</span>
                                                  <span class="side-menu__arrow"></span>
-                                             </div>
+                                             </a>
                                              <ul class="side-menu__additional-list">
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы операторские</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы операторские
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Рабочие станции</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Рабочие станции
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы переговорные</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы переговорные
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Приставные элементы</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Приставные элементы
+                                                     </a>
                                                  </li>
                                              </ul>
                                          </li>
                                          <li class="side-menu__subitem dropdown">
-                                             <div class="side-menu__sublink-wrapper">
-                                                 <a href="#" class="side-menu__sublink">Рабочие станции</a>
+                                             <a href="#" class="side-menu__sublink">
+                                                 <span>Рабочие станции</span>
                                                  <span class="side-menu__arrow"></span>
-                                             </div>
+                                             </a>
                                              <ul class="side-menu__additional-list">
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы операторские</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы операторские
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Рабочие станции</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Рабочие станции
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы переговорные</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы переговорные
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Приставные элементы</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Приставные элементы
+                                                     </a>
                                                  </li>
                                              </ul>
                                          </li>
                                          <li class="side-menu__subitem dropdown">
-                                             <div class="side-menu__sublink-wrapper">
-                                                 <a href="#" class="side-menu__sublink">Столы переговорные</a>
+                                             <a href="#" class="side-menu__sublink">
+                                                 <span>Столы переговорные</span>
                                                  <span class="side-menu__arrow"></span>
-                                             </div>
+                                             </a>
                                              <ul class="side-menu__additional-list">
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы операторские</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы операторские
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Рабочие станции</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Рабочие станции
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы переговорные</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы переговорные
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Приставные элементы</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Приставные элементы
+                                                     </a>
                                                  </li>
                                              </ul>
                                          </li>
                                          <li class="side-menu__subitem dropdown">
-                                             <div class="side-menu__sublink-wrapper">
-                                                 <a href="#" class="side-menu__sublink">Приставные элементы</a>
+                                             <a href="#" class="side-menu__sublink">
+                                                 <span>Приставные элементы</span>
                                                  <span class="side-menu__arrow"></span>
-                                             </div>
+                                             </a>
                                              <ul class="side-menu__additional-list">
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы операторские</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы операторские
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Рабочие станции</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Рабочие станции
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы переговорные</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы переговорные
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Приставные элементы</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Приставные элементы
+                                                     </a>
                                                  </li>
                                              </ul>
                                          </li>
                                          <li class="side-menu__subitem dropdown">
-                                             <div class="side-menu__sublink-wrapper">
-                                                 <a href="#" class="side-menu__sublink">STYLE PROJECT</a>
+                                             <a href="#" class="side-menu__sublink">
+                                                 <span>STYLE PROJECT</span>
                                                  <span class="side-menu__arrow"></span>
-                                             </div>
+                                             </a>
                                              <ul class="side-menu__additional-list">
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы операторские</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы операторские
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Рабочие станции</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Рабочие станции
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы переговорные</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы переговорные
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Приставные элементы</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Приставные элементы
+                                                     </a>
                                                  </li>
                                              </ul>
                                          </li>
                                          <li class="side-menu__subitem dropdown">
-                                             <div class="side-menu__sublink-wrapper">
-                                                 <a href="#" class="side-menu__sublink">CONCEPT</a>
+                                             <a href="#" class="side-menu__sublink">
+                                                 <span>CONCEPT</span>
                                                  <span class="side-menu__arrow"></span>
-                                             </div>
+                                             </a>
                                              <ul class="side-menu__additional-list">
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы операторские</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы операторские
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Рабочие станции</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Рабочие станции
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы переговорные</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы переговорные
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Приставные элементы</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Приставные элементы
+                                                     </a>
                                                  </li>
                                              </ul>
                                          </li>
                                          <li class="side-menu__subitem dropdown">
-                                             <div class="side-menu__sublink-wrapper">
-                                                 <a href="#" class="side-menu__sublink">ESTETICA</a>
+                                             <a href="#" class="side-menu__sublink">
+                                                 <span>ESTETICA</span>
                                                  <span class="side-menu__arrow"></span>
-                                             </div>
+                                             </a>
                                              <ul class="side-menu__additional-list">
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы операторские</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы операторские
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Рабочие станции</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Рабочие станции
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы переговорные</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы переговорные
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Приставные элементы</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Приставные элементы
+                                                     </a>
                                                  </li>
                                              </ul>
                                          </li>
                                          <li class="side-menu__subitem dropdown">
-                                             <div class="side-menu__sublink-wrapper">
-                                                 <a href="#" class="side-menu__sublink">ONIX</a>
+                                             <a href="#" class="side-menu__sublink">
+                                                 <span>ONIX</span>
                                                  <span class="side-menu__arrow"></span>
-                                             </div>
+                                             </a>
                                              <ul class="side-menu__additional-list">
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы операторские</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы операторские
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Рабочие станции</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Рабочие станции
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы переговорные</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы переговорные
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Приставные элементы</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Приставные элементы
+                                                     </a>
                                                  </li>
                                              </ul>
                                          </li>
                                          <li class="side-menu__subitem dropdown">
-                                             <div class="side-menu__sublink-wrapper">
-                                                 <a href="#" class="side-menu__sublink">ONIX WOOD</a>
+                                             <a href="#" class="side-menu__sublink">
+                                                 <span>ONIX WOOD</span>
                                                  <span class="side-menu__arrow"></span>
-                                             </div>
+                                             </a>
                                              <ul class="side-menu__additional-list">
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы операторские</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы операторские
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Рабочие станции</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Рабочие станции
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы переговорные</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы переговорные
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Приставные элементы</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Приставные элементы
+                                                     </a>
                                                  </li>
                                              </ul>
                                          </li>
                                          <li class="side-menu__subitem dropdown">
-                                             <div class="side-menu__sublink-wrapper">
-                                                 <a href="#" class="side-menu__sublink">METAL SYSTEM</a>
+                                             <a href="#" class="side-menu__sublink">
+                                                 <span>METAL SYSTEM</span>
                                                  <span class="side-menu__arrow"></span>
-                                             </div>
+                                             </a>
                                              <ul class="side-menu__additional-list">
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы операторские</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы операторские
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Рабочие станции</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Рабочие станции
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы переговорные</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы переговорные
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Приставные элементы</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                        Приставные элементы
+                                                     </a>
                                                  </li>
                                              </ul>
                                          </li>
                                          <li class="side-menu__subitem dropdown">
-                                             <div class="side-menu__sublink-wrapper">
-                                                 <a href="#" class="side-menu__sublink">METAL SYSTEM QUATRO 4X4</a>
+                                             <a href="#" class="side-menu__sublink">
+                                                 <span>METAL SYSTEM QUATRO 4X4</span>
                                                  <span class="side-menu__arrow"></span>
-                                             </div>
+                                             </a>
                                              <ul class="side-menu__additional-list">
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы операторские</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                        Столы операторские
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Рабочие станции</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Рабочие станции
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы переговорные</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы переговорные
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Приставные элементы</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Приставные элементы
+                                                     </a>
                                                  </li>
                                              </ul>
                                          </li>
                                          <li class="side-menu__subitem dropdown">
-                                             <div class="side-menu__sublink-wrapper">
-                                                 <a href="#" class="side-menu__sublink">METAL SYSTEM QUATRO 5X5</a>
+                                             <a href="#" class="side-menu__sublink">
+                                                 <span>METAL SYSTEM QUATRO 5X5</span>
                                                  <span class="side-menu__arrow"></span>
-                                             </div>
+                                             </a>
                                              <ul class="side-menu__additional-list">
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы операторские</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы операторские
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Рабочие станции</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Рабочие станции
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы переговорные</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы переговорные
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Приставные элементы</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Приставные элементы
+                                                     </a>
                                                  </li>
                                              </ul>
                                          </li>
                                          <li class="side-menu__subitem dropdown">
-                                             <div class="side-menu__sublink-wrapper">
-                                                 <a href="#" class="side-menu__sublink">LOFT</a>
+                                             <a href="#" class="side-menu__sublink">
+                                                 <span>LOFT</span>
                                                  <span class="side-menu__arrow"></span>
-                                             </div>
+                                             </a>
                                              <ul class="side-menu__additional-list">
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы операторские</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы операторские
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Рабочие станции</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Рабочие станции
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы переговорные</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы переговорные
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Приставные элементы</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Приставные элементы
+                                                     </a>
                                                  </li>
                                              </ul>
                                          </li>
                                          <li class="side-menu__subitem dropdown">
-                                             <div class="side-menu__sublink-wrapper">
-                                                 <a href="#" class="side-menu__sublink">SLIM SYSTEM</a>
+                                             <a href="#" class="side-menu__sublink">
+                                                 <span>SLIM SYSTEM</span>
                                                  <span class="side-menu__arrow"></span>
-                                             </div>
+                                             </a>
                                              <ul class="side-menu__additional-list">
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы операторские</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы операторские
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Рабочие станции</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Рабочие станции
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы переговорные</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы переговорные
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Приставные элементы</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Приставные элементы
+                                                     </a>
                                                  </li>
                                              </ul>
                                          </li>
                                          <li class="side-menu__subitem dropdown">
-                                             <div class="side-menu__sublink-wrapper">
-                                                 <a href="#" class="side-menu__sublink">STYLE</a>
+                                             <a href="#" class="side-menu__sublink">
+                                                 <span>STYLE</span>
                                                  <span class="side-menu__arrow"></span>
-                                             </div>
+                                             </a>
                                              <ul class="side-menu__additional-list">
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы операторские</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы операторские
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Рабочие станции</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Рабочие станции
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы переговорные</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы переговорные
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Приставные элементы</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Приставные элементы
+                                                     </a>
                                                  </li>
                                              </ul>
                                          </li>
                                          <li class="side-menu__subitem dropdown">
-                                             <div class="side-menu__sublink-wrapper">
-                                                 <a href="#" class="side-menu__sublink">RIVA</a>
+                                             <a href="#" class="side-menu__sublink">
+                                                 <span>RIVA</span>
                                                  <span class="side-menu__arrow"></span>
-                                             </div>
+                                             </a>
                                              <ul class="side-menu__additional-list">
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы операторские</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                        Столы операторские
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Рабочие станции</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Рабочие станции
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы переговорные</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы переговорные
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Приставные элементы</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Приставные элементы
+                                                     </a>
                                                  </li>
                                              </ul>
                                          </li>
                                          <li class="side-menu__subitem dropdown">
-                                             <div class="side-menu__sublink-wrapper">
-                                                 <a href="#" class="side-menu__sublink">NOVA S</a>
+                                             <a href="#" class="side-menu__sublink">
+                                                 <span>NOVA S</span>
                                                  <span class="side-menu__arrow"></span>
-                                             </div>
+                                             </a>
                                              <ul class="side-menu__additional-list">
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы операторские</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы операторские
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Рабочие станции</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Рабочие станции
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы переговорные</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы переговорные
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Приставные элементы</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Приставные элементы
+                                                     </a>
                                                  </li>
                                              </ul>
                                          </li>
                                          <li class="side-menu__subitem dropdown">
-                                             <div class="side-menu__sublink-wrapper">
-                                                 <a href="#" class="side-menu__sublink">MOVE UP</a>
+                                             <a href="#" class="side-menu__sublink">
+                                                 <span>MOVE UP</span>
                                                  <span class="side-menu__arrow"></span>
-                                             </div>
+                                             </a>
                                              <ul class="side-menu__additional-list">
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы операторские</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы операторские
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Рабочие станции</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Рабочие станции
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы переговорные</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы переговорные
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Приставные элементы</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Приставные элементы
+                                                     </a>
                                                  </li>
                                              </ul>
                                          </li>
                                          <li class="side-menu__subitem dropdown">
-                                             <div class="side-menu__sublink-wrapper">
-                                                 <a href="#" class="side-menu__sublink">X-PULL</a>
+                                             <a href="#" class="side-menu__sublink">
+                                                 <span>X-PULL</span>
                                                  <span class="side-menu__arrow"></span>
-                                             </div>
+                                             </a>
                                              <ul class="side-menu__additional-list">
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы операторские</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы операторские
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Рабочие станции</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Рабочие станции
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Столы переговорные</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Столы переговорные
+                                                     </a>
                                                  </li>
                                                  <li class="side-menu__additional-item">
-                                                     <a href="#" class="side-menu__additional-link">Приставные элементы</a>
+                                                     <a href="#" class="side-menu__additional-link">
+                                                         <span></span>
+                                                         Приставные элементы
+                                                     </a>
                                                  </li>
                                              </ul>
                                          </li>
@@ -491,9 +731,10 @@
                                      </ul>
                                  </li>
                                  <li class="side-menu__item">
-                                     <div class="side-menu__link-wrapper">
-                                         <a href="#" class="side-menu__link">Стойки ресепшен</a><span class="side-menu__arrow"></span>
-                                     </div>
+                                     <a href="#" class="side-menu__link">
+                                         <span>Стойки ресепшен</span>
+                                         <span class="side-menu__arrow"></span>
+                                     </a>
                                      <ul class="side-menu__sublist">
                                          <li class="side-menu__subitem">
                                              <a href="#" class="side-menu__sublink">1</a>
@@ -507,9 +748,10 @@
                                      </ul>
                                  </li>
                                  <li class="side-menu__item">
-                                     <div class="side-menu__link-wrapper">
-                                         <a href="#" class="side-menu__link">Судебная мебель</a><span class="side-menu__arrow"></span>
-                                     </div>
+                                     <a href="#" class="side-menu__link">
+                                         <span>Судебная мебель</span>
+                                         <span class="side-menu__arrow"></span>
+                                     </a>
                                      <ul class="side-menu__sublist">
                                          <li class="side-menu__subitem">
                                              <a href="#" class="side-menu__sublink">1</a>
@@ -523,9 +765,10 @@
                                      </ul>
                                  </li>
                                  <li class="side-menu__item">
-                                     <div class="side-menu__link-wrapper">
-                                         <a href="#" class="side-menu__link">Системы хранения</a><span class="side-menu__arrow"></span>
-                                     </div>
+                                     <a href="#" class="side-menu__link">
+                                         <span>Системы хранения</span>
+                                         <span class="side-menu__arrow"></span>
+                                     </a>
                                      <ul class="side-menu__sublist">
                                          <li class="side-menu__subitem">
                                              <a href="#" class="side-menu__sublink">1</a>
@@ -539,9 +782,10 @@
                                      </ul>
                                  </li>
                                  <li class="side-menu__item">
-                                     <div class="side-menu__link-wrapper">
-                                         <a href="#" class="side-menu__link">Экраны и перегородки</a><span class="side-menu__arrow"></span>
-                                     </div>
+                                     <a href="#" class="side-menu__link">
+                                         <span>Экраны и перегородки</span>
+                                         <span class="side-menu__arrow"></span>
+                                     </a>
                                      <ul class="side-menu__sublist">
                                          <li class="side-menu__subitem">
                                              <a href="#" class="side-menu__sublink">1</a>
@@ -555,9 +799,10 @@
                                      </ul>
                                  </li>
                                  <li class="side-menu__item">
-                                     <div class="side-menu__link-wrapper">
-                                         <a href="#" class="side-menu__link">Для дома и гостиниц</a><span class="side-menu__arrow"></span>
-                                     </div>
+                                     <a href="#" class="side-menu__link">
+                                         <span>Для дома и гостиниц</span>
+                                         <span class="side-menu__arrow"></span>
+                                     </a>
                                      <ul class="side-menu__sublist">
                                          <li class="side-menu__subitem">
                                              <a href="#" class="side-menu__sublink">1</a>
@@ -571,9 +816,10 @@
                                      </ul>
                                  </li>
                                  <li class="side-menu__item">
-                                     <div class="side-menu__link-wrapper">
-                                         <a href="#" class="side-menu__link">Мягкая мебель</a><span class="side-menu__arrow"></span>
-                                     </div>
+                                     <a href="#" class="side-menu__link">
+                                         <span>Мягкая мебель</span>
+                                         <span class="side-menu__arrow"></span>
+                                     </a>
                                      <ul class="side-menu__sublist">
                                          <li class="side-menu__subitem">
                                              <a href="#" class="side-menu__sublink">1</a>
@@ -587,9 +833,10 @@
                                      </ul>
                                  </li>
                                  <li class="side-menu__item">
-                                     <div class="side-menu__link-wrapper">
-                                         <a href="#" class="side-menu__link">Стойки ресепшен</a><span class="side-menu__arrow"></span>
-                                     </div>
+                                     <a href="#" class="side-menu__link">
+                                         <span>Стойки ресепшен</span>
+                                         <span class="side-menu__arrow"></span>
+                                     </a>
                                      <ul class="side-menu__sublist">
                                          <li class="side-menu__subitem">
                                              <a href="#" class="side-menu__sublink">1</a>
@@ -603,9 +850,10 @@
                                      </ul>
                                  </li>
                                  <li class="side-menu__item">
-                                     <div class="side-menu__link-wrapper">
-                                         <a href="#" class="side-menu__link">Журнальные столы</a><span class="side-menu__arrow"></span>
-                                     </div>
+                                     <a href="#" class="side-menu__link">
+                                         <span>Журнальные столы</span>
+                                         <span class="side-menu__arrow"></span>
+                                     </a>
                                      <ul class="side-menu__sublist">
                                          <li class="side-menu__subitem">
                                              <a href="#" class="side-menu__sublink">1</a>
@@ -619,9 +867,10 @@
                                      </ul>
                                  </li>
                                  <li class="side-menu__item">
-                                     <div class="side-menu__link-wrapper">
-                                         <a href="#" class="side-menu__link">Кресла</a><span class="side-menu__arrow"></span>
-                                     </div>
+                                     <a href="#" class="side-menu__link">
+                                         <span>Кресла</span>
+                                         <span class="side-menu__arrow"></span>
+                                     </a>
                                      <ul class="side-menu__sublist">
                                          <li class="side-menu__subitem">
                                              <a href="#" class="side-menu__sublink">1</a>
@@ -635,9 +884,10 @@
                                      </ul>
                                  </li>
                                  <li class="side-menu__item">
-                                     <div class="side-menu__link-wrapper">
-                                         <a href="#" class="side-menu__link">Спец. предложения</a><span class="side-menu__arrow"></span>
-                                     </div>
+                                     <a href="#" class="side-menu__link">
+                                         <span>Спец. предложения</span>
+                                         <span class="side-menu__arrow"></span>
+                                     </a>
                                      <ul class="side-menu__sublist">
                                          <li class="side-menu__subitem">
                                              <a href="#" class="side-menu__sublink">1</a>

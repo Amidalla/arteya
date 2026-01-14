@@ -2,7 +2,65 @@
 <html lang="ru">
 <include src="layout/head.html"></include>
 <body>
-<include src="layout/header.html"></include>
+<header class="header">
+    <div class="container header__inner">
+        <div class="header__top">
+            <div class="header__logo">
+                <a href="#"><img class="lazy" data-src="assets/images/header-logo.svg" alt=""></a>
+            </div>
+            <nav class="header__nav">
+                <ul class="header__list">
+                    <li class="header__item">
+                        <a href="#" class="header__link">О компании</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="#" class="header__link">Портфолио</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__contacts">
+                <a class="phone-link" href="tel:+78125665050">+7 (812) 566-50-50</a>
+                <a class="mail-link" href="mailto:zakaz@arteya.pro">zakaz@arteya.pro</a>
+            </div>
+            <a href="#" class="header__btn color-btn call-btn">
+                Заказать звонок
+            </a>
+            <div class="header__burger">
+                <img class="lazy" data-src="assets/images/burger.svg" alt="">
+            </div>
+        </div>
+        <div class="header__bottom">
+            <a href="#" class="header__btn color-btn catalog-btn">
+                <img class="lazy" data-src="assets/images/double-burger.svg" alt="">
+                <span>Каталог</span>
+            </a>
+            <div class="search">
+                <div class="search__inner">
+                    <form class="search__form">
+                        <input type="search" placeholder="Поиск" name="q" class="search__input">
+                        <img class="lazy search-img" data-src="assets/images/search.svg" alt="">
+                    </form>
+                </div>
+            </div>
+            <div class="header__wrapper">
+                <a href="#" class="header__user">
+                    <include src="assets/svg/user-icon.html"></include>
+                    <span>Войти</span>
+                </a>
+                <a href="#" class="header__comparison">
+                    <include src="assets/svg/comparison-icon.html"></include>
+                    <span>Сравнение</span>
+                    <span class="counter">2</span>
+                </a>
+                <a href="#" class="header__basket">
+                    <include src="assets/svg/basket-icon.html"></include>
+                    <span>Корзина</span>
+                    <span class="counter">2</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
 <main>
     <h1 class="visually-hidden">
         Создаём офисное пространство - дизайн проекты бесплатно

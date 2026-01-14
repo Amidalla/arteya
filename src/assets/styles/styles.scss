@@ -15,6 +15,28 @@ body {
 
 main {
   flex: 1 0 auto;
+
+  &.inside-page {
+    h1 {
+      font-size: 36px;
+      font-weight: 800;
+      line-height: 48px;
+      color: c.$grey;
+      margin-bottom: 40px;
+      text-align: left;
+
+      @media (max-width: 1299px) {
+        font-size: 30px;
+        line-height: 24px;
+        margin-bottom: 20px;
+      }
+
+      @media (max-width: 1000px) {
+        font-size: 24px;
+        line-height: 24px;
+      }
+    }
+  }
 }
 
 .visually-hidden {
@@ -85,5 +107,60 @@ h3 {
 .pseudo-placeholder {
   .red-star {
     color: red !important;
+  }
+}
+
+.breadcrumb {
+  background: #F9F9F9;
+
+  &__inner {
+    padding-top: 44px;
+    margin-bottom: -4px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;;
+  }
+
+  &__item {
+
+    a {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      color: c.$grey;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &:not(:last-child) {
+      padding-right: 15px;
+      padding-left: 9px;
+      position: relative;
+
+      &::after {
+        content: "/";
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 5;
+        color: c.$grey;
+      }
+    }
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &.active {
+      padding-left: 9px;
+
+      a {
+        color: rgba(91, 91, 91, 0.6);
+      }
+    }
   }
 }

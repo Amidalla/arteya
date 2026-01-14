@@ -27,22 +27,47 @@ export function InitMobileMenu() {
     let isAuthModalOpen = false;
     let isRegistrationModalOpen = false;
     let scrollPosition = 0;
+    let scrollbarWidth = 0;
+
+    function calculateScrollbarWidth() {
+        return window.innerWidth - document.documentElement.clientWidth;
+    }
 
     function disableBodyScroll() {
         scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+        scrollbarWidth = calculateScrollbarWidth();
+
+        // Проверяем, есть ли у хедера абсолютное позиционирование
+        const header = document.querySelector('.header');
+        const isAbsoluteHeader = header && window.getComputedStyle(header).position === 'absolute';
 
         document.body.style.position = 'fixed';
         document.body.style.top = `-${scrollPosition}px`;
         document.body.style.left = '0';
         document.body.style.width = '100%';
+        document.body.style.overflow = 'hidden';
 
         if (scrollbarWidth > 0) {
+
             document.body.style.paddingRight = `${scrollbarWidth}px`;
+
+
             document.querySelectorAll('.header, .header-fixed, [data-fixed]').forEach(el => {
-                const currentPadding = window.getComputedStyle(el).paddingRight;
-                const currentPaddingValue = parseFloat(currentPadding) || 0;
-                el.style.paddingRight = `${currentPaddingValue + scrollbarWidth}px`;
+                const elPosition = window.getComputedStyle(el).position;
+                const isInsidePage = el.classList.contains('inside-page-header');
+
+                if (elPosition === 'absolute' || elPosition === 'fixed') {
+                    // Для абсолютных и фиксированных элементов
+                    const currentPadding = window.getComputedStyle(el).paddingRight;
+                    const currentPaddingValue = parseFloat(currentPadding) || 0;
+                    el.style.paddingRight = `${currentPaddingValue + scrollbarWidth}px`;
+                    el.style.boxSizing = 'border-box';
+                } else if (elPosition === 'relative' || isInsidePage) {
+                    // Для относительных элементов (внутренние страницы)
+                    const currentMargin = window.getComputedStyle(el).marginRight;
+                    const currentMarginValue = parseFloat(currentMargin) || 0;
+                    el.style.marginRight = `${currentMarginValue + scrollbarWidth}px`;
+                }
             });
         }
     }
@@ -52,12 +77,16 @@ export function InitMobileMenu() {
         document.body.style.top = '';
         document.body.style.left = '';
         document.body.style.width = '';
+        document.body.style.overflow = '';
         document.body.style.paddingRight = '';
 
         window.scrollTo(0, scrollPosition);
 
+        // Восстанавливаем стили для всех элементов
         document.querySelectorAll('.header, .header-fixed, [data-fixed]').forEach(el => {
             el.style.paddingRight = '';
+            el.style.marginRight = '';
+            el.style.boxSizing = '';
         });
     }
 
@@ -298,10 +327,35 @@ export function InitMobileMenu() {
     }
 
     window.addEventListener('resize', () => {
-        if (isMobileMenuOpen || isCallModalOpen || isDesignModalOpen || isAuthModalOpen || isRegistrationModalOpen) {
-            const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-            if (scrollbarWidth > 0) {
-                document.body.style.paddingRight = `${scrollbarWidth}px`;
+
+        const newScrollbarWidth = calculateScrollbarWidth();
+
+        if (isMobileMenuOpen || isCallModalOpen || isDesignModalOpen ||
+            isAuthModalOpen || isRegistrationModalOpen) {
+
+            if (newScrollbarWidth !== scrollbarWidth) {
+                scrollbarWidth = newScrollbarWidth;
+
+
+                if (scrollbarWidth > 0) {
+                    document.body.style.paddingRight = `${scrollbarWidth}px`;
+
+                    document.querySelectorAll('.header, .header-fixed, [data-fixed]').forEach(el => {
+                        const elPosition = window.getComputedStyle(el).position;
+                        const isInsidePage = el.classList.contains('inside-page-header');
+
+                        if (elPosition === 'absolute' || elPosition === 'fixed') {
+                            const currentPadding = window.getComputedStyle(el).paddingRight;
+                            const currentPaddingValue = parseFloat(currentPadding) || 0;
+
+                            el.style.paddingRight = `${currentPaddingValue - scrollbarWidth + newScrollbarWidth}px`;
+                        } else if (elPosition === 'relative' || isInsidePage) {
+                            const currentMargin = window.getComputedStyle(el).marginRight;
+                            const currentMarginValue = parseFloat(currentMargin) || 0;
+                            el.style.marginRight = `${currentMarginValue - scrollbarWidth + newScrollbarWidth}px`;
+                        }
+                    });
+                }
             }
         }
     });

@@ -3,6 +3,7 @@ import "../styles/styles.scss";
 import "../styles/header.scss";
 import "../styles/footer.scss";
 import "../styles/home.scss";
+import "../styles/catalog.scss";
 import "../styles/modals.scss";
 import LazyLoad from "vanilla-lazyload";
 import Swiper from 'swiper';
@@ -15,6 +16,7 @@ import { SlidersInit } from './sliders.js';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { InitMobileMenu } from './modals.js';
+import { InitSideMenu } from './side-menu.js';
 
 Swiper.use([Pagination, Navigation, Autoplay, Thumbs, EffectFade]);
 
@@ -236,6 +238,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     InitMobileMenu();
+    InitSideMenu();
 
     let resizeTimeout;
     window.addEventListener('resize', function() {
