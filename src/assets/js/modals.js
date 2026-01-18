@@ -6,6 +6,7 @@ export function InitMobileMenu() {
 
     const callModal = document.querySelector('.call-modal');
     const callBtns = document.querySelectorAll('.call-btn');
+    const leaveRequestBtns = document.querySelectorAll('.leave-request-btn');
 
     const designModal = document.querySelector('.design-modal');
     const orderBtns = document.querySelectorAll('.order-button');
@@ -37,7 +38,6 @@ export function InitMobileMenu() {
         scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
         scrollbarWidth = calculateScrollbarWidth();
 
-        // Проверяем, есть ли у хедера абсолютное позиционирование
         const header = document.querySelector('.header');
         const isAbsoluteHeader = header && window.getComputedStyle(header).position === 'absolute';
 
@@ -57,13 +57,13 @@ export function InitMobileMenu() {
                 const isInsidePage = el.classList.contains('inside-page-header');
 
                 if (elPosition === 'absolute' || elPosition === 'fixed') {
-                    // Для абсолютных и фиксированных элементов
+
                     const currentPadding = window.getComputedStyle(el).paddingRight;
                     const currentPaddingValue = parseFloat(currentPadding) || 0;
                     el.style.paddingRight = `${currentPaddingValue + scrollbarWidth}px`;
                     el.style.boxSizing = 'border-box';
                 } else if (elPosition === 'relative' || isInsidePage) {
-                    // Для относительных элементов (внутренние страницы)
+
                     const currentMargin = window.getComputedStyle(el).marginRight;
                     const currentMarginValue = parseFloat(currentMargin) || 0;
                     el.style.marginRight = `${currentMarginValue + scrollbarWidth}px`;
@@ -82,7 +82,7 @@ export function InitMobileMenu() {
 
         window.scrollTo(0, scrollPosition);
 
-        // Восстанавливаем стили для всех элементов
+
         document.querySelectorAll('.header, .header-fixed, [data-fixed]').forEach(el => {
             el.style.paddingRight = '';
             el.style.marginRight = '';
@@ -257,6 +257,16 @@ export function InitMobileMenu() {
 
         callModal.addEventListener('click', (e) => {
             e.stopPropagation();
+        });
+    }
+
+
+    if (callModal && leaveRequestBtns.length > 0) {
+        leaveRequestBtns.forEach(leaveRequestBtn => {
+            leaveRequestBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openCallModal();
+            });
         });
     }
 
