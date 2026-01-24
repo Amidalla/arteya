@@ -2,120 +2,113 @@
 <html lang="ru">
 <include src="layout/head.html"></include>
 <body>
-<svg style="display: none">
-    <filter id="displacementFilter">
-        <feImage
-                href="data:image/png;base64,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"
-                preserveAspectRatio="none"/>
-
-        <feDisplacementMap
-                in="SourceGraphic"
-                in2="turbulence"
-                scale="300"
-                xChannelSelector="R"
-                yChannelSelector="G"
-        />
-    </filter>
+<svg style="position: absolute; width: 100%; height: 100%; z-index: 0;" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100%" height="100%" fill="url(#dottedGrid)" />
 </svg>
 <header class="header">
-    <div class="container header__inner bg-liquid-glass">
-        <div class="header__top bg-liquid-glass-mobile">
-            <div class="header__logo">
-                <a href="#"><img class="lazy" data-src="assets/images/header-logo.svg" alt=""></a>
-            </div>
-            <nav class="header__nav">
-                <ul class="header__list">
-                    <li class="header__item">
-                        <a href="#" class="header__link">О компании</a>
-                    </li>
-                    <li class="header__item">
-                        <a href="#" class="header__link">Портфолио</a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="header__contacts">
-                <a class="phone-link" href="tel:+78125665050">+7 (812) 566-50-50</a>
-                <a class="mail-link" href="mailto:zakaz@arteya.pro">zakaz@arteya.pro</a>
-            </div>
-            <a href="#" class="header__btn color-btn call-btn">
-                Заказать звонок
-            </a>
-            <div class="header__burger">
-                <img class="lazy" data-src="assets/images/burger.svg" alt="">
-            </div>
-        </div>
-        <div class="header__bottom">
-            <a href="#" class="header__btn color-btn catalog-btn">
-                <img class="lazy" data-src="assets/images/double-burger.svg" alt="">
-                <span>Каталог</span>
-            </a>
-            <div class="search">
-                <div class="search__inner">
-                    <form class="search__form">
-                        <input type="search" placeholder="Поиск" name="q" class="search__input">
-                        <img class="lazy search-img" data-src="assets/images/search.svg" alt="">
-                    </form>
+    <div class="header__wrap">
+        <div class="container header__inner">
+            <div class="header__block">
+                <div class="header__top">
+                    <div class="header__logo">
+                        <a href="#"><img class="lazy" data-src="assets/images/header-logo.svg" alt=""></a>
+                    </div>
+                    <nav class="header__nav">
+                        <ul class="header__list">
+                            <li class="header__item">
+                                <a href="#" class="header__link">О компании</a>
+                            </li>
+                            <li class="header__item">
+                                <a href="#" class="header__link">Портфолио</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header__contacts">
+                        <a class="phone-link" href="tel:+78125665050">+7 (812) 566-50-50</a>
+                        <a class="mail-link" href="mailto:zakaz@arteya.pro">zakaz@arteya.pro</a>
+                    </div>
+                    <a href="#" class="header__btn color-btn call-btn">
+                        Заказать звонок
+                    </a>
+                    <div class="header__burger">
+                        <img class="lazy" data-src="assets/images/burger.svg" alt="">
+                    </div>
+                </div>
+                <div class="header__bottom">
+                    <a href="#" class="header__btn color-btn catalog-btn">
+                        <img class="lazy" data-src="assets/images/double-burger.svg" alt="">
+                        <span>Каталог</span>
+                    </a>
+                    <div class="search">
+                        <div class="search__inner">
+                            <form class="search__form">
+                                <input type="search" placeholder="Поиск" name="q" class="search__input">
+                                <img class="lazy search-img" data-src="assets/images/search.svg" alt="">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="header__wrapper">
+                        <a href="#" class="header__user">
+                            <include src="assets/svg/user-icon.html"></include>
+                            <span>Войти</span>
+                        </a>
+                        <a href="#" class="header__comparison">
+                            <include src="assets/svg/comparison-icon.html"></include>
+                            <span>Сравнение</span>
+                            <span class="counter">2</span>
+                        </a>
+                        <a href="#" class="header__basket">
+                            <include src="assets/svg/basket-icon.html"></include>
+                            <span>Корзина</span>
+                            <span class="counter">2</span>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="header__wrapper">
-                <a href="#" class="header__user">
-                    <include src="assets/svg/user-icon.html"></include>
-                    <span>Войти</span>
-                </a>
-                <a href="#" class="header__comparison">
-                    <include src="assets/svg/comparison-icon.html"></include>
-                    <span>Сравнение</span>
-                    <span class="counter">2</span>
-                </a>
-                <a href="#" class="header__basket">
-                    <include src="assets/svg/basket-icon.html"></include>
-                    <span>Корзина</span>
-                    <span class="counter">2</span>
-                </a>
-            </div>
         </div>
+        <div class="header-shadow"></div>
     </div>
 </header>
 <main>
     <h1 class="visually-hidden">
         Создаём офисное пространство - дизайн проекты бесплатно
     </h1>
-   <section class="section hero" data-aos="fade-up">
-       <div class="hero__slider swiper">
-           <div class="swiper-wrapper">
-               <div class="swiper-slide">
-                   <img class="lazy" data-src="assets/images/hero1.jpg" alt="'">
-                   <div class="hero__content">
-                       <p class="hero__title">Создаём<br>
-                           офисное пространство</p>
-                       <p class="hero__text">Какой-то подстрочник</p>
-                       <a href="#" class="hero__btn color-btn order-button">Заказать дизайн-проект <span>бесплатно</span></a>
-                   </div>
-               </div>
-               <div class="swiper-slide">
-                   <img class="lazy" data-src="assets/images/hero1.jpg" alt="'">
-                   <div class="hero__content">
-                       <p class="hero__title">Создаём<br>
-                           офисное пространство</p>
-                       <p class="hero__text">Какой-то подстрочник</p>
-                       <a href="#" class="hero__btn color-btn order-button">Заказать дизайн-проект <span>бесплатно</span></a>
-                   </div>
-               </div>
-               <div class="swiper-slide">
-                   <img class="lazy" data-src="assets/images/hero1.jpg" alt="'">
-                   <div class="hero__content">
-                       <p class="hero__title">
-                           Создаём<br>
-                           офисное пространство
-                       </p>
-                       <p class="hero__text">Какой-то подстрочник</p>
-                       <a href="#" class="hero__btn color-btn order-button">Заказать дизайн-проект <span>бесплатно</span></a>
-                   </div>
-               </div>
-           </div>
-           <div class="hero__pagination"></div>
-       </div>
-   </section>
+    <section class="section hero" data-aos="fade-up">
+        <div class="hero__slider swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img class="lazy" data-src="assets/images/hero1.jpg" alt="'">
+                    <div class="hero__content">
+                        <p class="hero__title">Создаём<br>
+                            офисное пространство</p>
+                        <p class="hero__text">Какой-то подстрочник</p>
+                        <a href="#" class="hero__btn color-btn order-button">Заказать дизайн-проект <span>бесплатно</span></a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img class="lazy" data-src="assets/images/hero1.jpg" alt="'">
+                    <div class="hero__content">
+                        <p class="hero__title">Создаём<br>
+                            офисное пространство</p>
+                        <p class="hero__text">Какой-то подстрочник</p>
+                        <a href="#" class="hero__btn color-btn order-button">Заказать дизайн-проект <span>бесплатно</span></a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img class="lazy" data-src="assets/images/hero1.jpg" alt="'">
+                    <div class="hero__content">
+                        <p class="hero__title">
+                            Создаём<br>
+                            офисное пространство
+                        </p>
+                        <p class="hero__text">Какой-то подстрочник</p>
+                        <a href="#" class="hero__btn color-btn order-button">Заказать дизайн-проект <span>бесплатно</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__pagination"></div>
+        </div>
+    </section>
     <section class="section catalog" data-aos="fade-up">
         <div class="container">
             <h2>Каталог</h2>
@@ -355,23 +348,23 @@
         </div>
     </section>
     <section class="section about" data-aos="fade-up">
-            <div class="mobile-title"><h2>О компании</h2></div>
-            <div class="about__media">
-                <img class="lazy" data-src="assets/images/about.jpg" alt="">
-            </div>
-            <div class="about__text">
-                <h2>О компании</h2>
-                <p>ARTEYA — это воплощение гармонии, функциональности и безупречного вкуса в создании офисных пространств.
-                    Обращаясь к нам, вы получаете не просто услугу «под ключ», а комплексное преображение рабочей среды,
-                    где каждая деталь тщательно продумана для вдохновения и эффективной работы команды. Наши специалисты
-                    искусно сочетают эргономику, современные материалы и индивидуальный подход, чтобы создать не просто офис,
-                    а настоящий бизнес-хаб, отражающий ценности и амбиции вашей компании. Это инвестиция в комфорт,
-                    корпоративную культуру и, в конечном счете, в успех вашего бизнеса, ведь именно в атмосфере,
-                    созданной с душой и профессионализмом, рождаются самые смелые идеи и достигаются выдающиеся результаты.</p>
-                <p>Важно отметить, что мы фокусируем свой экспертный потенциал исключительно на работе с юридическими лицами,
-                    что гарантирует глубокое понимание бизнес-процессов, соответствие всем корпоративным стандартам
-                    и индивидуальный юридический подход к каждому клиенту.</p>
-            </div>
+        <div class="mobile-title"><h2>О компании</h2></div>
+        <div class="about__media">
+            <img class="lazy" data-src="assets/images/about.jpg" alt="">
+        </div>
+        <div class="about__text">
+            <h2>О компании</h2>
+            <p>ARTEYA — это воплощение гармонии, функциональности и безупречного вкуса в создании офисных пространств.
+                Обращаясь к нам, вы получаете не просто услугу «под ключ», а комплексное преображение рабочей среды,
+                где каждая деталь тщательно продумана для вдохновения и эффективной работы команды. Наши специалисты
+                искусно сочетают эргономику, современные материалы и индивидуальный подход, чтобы создать не просто офис,
+                а настоящий бизнес-хаб, отражающий ценности и амбиции вашей компании. Это инвестиция в комфорт,
+                корпоративную культуру и, в конечном счете, в успех вашего бизнеса, ведь именно в атмосфере,
+                созданной с душой и профессионализмом, рождаются самые смелые идеи и достигаются выдающиеся результаты.</p>
+            <p>Важно отметить, что мы фокусируем свой экспертный потенциал исключительно на работе с юридическими лицами,
+                что гарантирует глубокое понимание бизнес-процессов, соответствие всем корпоративным стандартам
+                и индивидуальный юридический подход к каждому клиенту.</p>
+        </div>
     </section>
     <section class="section main-form" data-aos="fade-up">
         <div class="container">
