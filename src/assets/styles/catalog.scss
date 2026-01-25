@@ -270,15 +270,47 @@
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   margin-bottom: 40px;
+
+  @media (max-width: 1299px) {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    gap: 20px;
+  }
+}
+
+.catalog-description__slider {
+  @media (max-width: 700px) {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
 }
 
 .catalog-slider {
   max-width: 860px;
 
+  @media (max-width: 1750px) {
+    max-width: 644px;
+  }
+
+  @media (max-width: 700px) {
+    max-width: 100%;
+  }
+
   .catalog-slider__main {
     height: 444px;
     width: 100%;
 
+    @media (max-width: 550px) {
+      height: 344px;
+    }
+
+    @media (max-width: 480px) {
+      height: 300px;
+    }
+    @media (max-width: 375px) {
+      height: 261px;
+    }
 
     img {
       width: 100%;
@@ -290,6 +322,48 @@
   .catalog-slider__thumbs {
     margin-right: -4px;
 
+    @media (max-width: 700px) {
+      margin-right: 0;
+    }
+
+
+    @media (max-width: 700px) {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 4px;
+
+      .swiper-wrapper {
+        display: contents;
+      }
+
+      .swiper-slide {
+        width: 100% !important;
+        margin-right: 0 !important;
+        height: 40px !important;
+
+        /* Распределение: первые 6 (первая строка) - space-between */
+        &:nth-child(-n+6) {
+          justify-self: stretch;
+        }
+
+        /* Последние слайды (вторая строка) - выравнивание влево */
+        &:nth-child(n+7) {
+          justify-self: start;
+          grid-column: auto;
+        }
+
+        /* Убираем отступ у последнего слайда в каждой строке */
+        &:nth-child(6n) {
+          margin-right: 0 !important;
+        }
+
+        /* Для второй строки */
+        &:nth-child(12n) {
+          margin-right: 0 !important;
+        }
+      }
+    }
+
     .swiper-slide {
       width: 104px !important;
       height: 69px;
@@ -297,6 +371,21 @@
       margin-top: 4px;
       border: 2px solid transparent;
       transition: all 0.3s ease;
+
+      @media (max-width: 700px) {
+        width: 100% !important; /* Занимает всю ячейку grid */
+        height: 60px !important;
+        margin-right: 0;
+        /* Убираем расчет ширины, так как grid сам распределяет */
+      }
+
+      @media (max-width: 500px) {
+        height: 50px !important;
+      }
+
+      @media (max-width: 430px) {
+        height: 40px !important;
+      }
 
       &:hover {
         border: 2px solid #586C5C;
@@ -323,6 +412,11 @@
   padding-bottom: 20px;
   border-bottom: 1px solid #0000001A;
 
+  @media (max-width: 650px) {
+    padding-bottom: 0;
+    border: none;
+  }
+
   p {
     font-family: "Roboto", sans-serif;
     font-size: 16px;
@@ -336,6 +430,11 @@
   padding-top: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #0000001A;
+
+  @media (max-width: 650px) {
+    padding-bottom: 0;
+    border: none;
+  }
 
   p {
     font-family: "Roboto", sans-serif;
@@ -359,6 +458,11 @@
     grid-template-columns: 1fr 1fr;
     margin-bottom: 8px;
     gap: 5px;
+
+    @media (max-width: 650px) {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   .specs-label {
@@ -366,11 +470,19 @@
     justify-content: space-between;
     align-items: baseline;
     gap: 5px;
+
+    @media (max-width: 650px) {
+     font-weight: 500;
+    }
   }
 
   .specs-dots {
     border-bottom: 1px dashed #000000;
     flex: 1;
+
+    @media (max-width: 650px) {
+      display: none;
+    }
   }
 }
 
@@ -401,10 +513,18 @@
   padding: 12px;
   margin-bottom: 40px;
 
+  @media (max-width: 1299px) {
+    margin-bottom: 20px;
+  }
+
   &__list {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+    }
   }
 
   &__item {
@@ -426,6 +546,12 @@
     font-weight: 500;
     line-height: 24px;
     color: #2C2C2C;
+    width: 311px;
+    
+    @media (max-width: 1024px) {
+      width: 100%;
+      padding: 12px;
+    }
   }
 }
 
@@ -435,16 +561,50 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 12px;
-    row-gap: 40px;
+    row-gap: 12px;
+    margin-bottom: 40px;
+
+    @media(max-width: 1299px) {
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  .comparison-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    opacity: 0;
+    width: 24px;
+    height: 24px;
+    transform: scale(0);
+    transition: all 0.5s ease;
   }
 
   &__item {
     position: relative;
+    box-shadow: 0px 16px 16px 0px #00000008;
+    border: 1px solid transparent;
+    transition: all 0.5s ease;
+
+    &:hover {
+      border: 1px solid #586C5C66;
+
+      .comparison-icon {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
   }
 
   &__link {
     display: inline-block;
     padding: 4px;
+    width: 100%;
   }
 
   &__media {
@@ -461,6 +621,9 @@
 
   &__text {
     padding: 16px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
   }
 
   &__title {
@@ -468,12 +631,106 @@
     font-weight: 500;
     line-height: 24px;
     color: #2C2C2C;
-    margin-bottom: 4px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     max-height: 48px;
+  }
+
+  .article-number,
+  .size {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    color: rgba(44, 44, 44, 0.6);
+  }
+}
+
+.pagination {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+
+  .pagination__prev {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+      svg {
+        path {
+          transition: all 0.3s ease;
+        }
+      }
+
+      &:hover {
+        svg {
+          path {
+            stroke: #292D32;
+            stroke-opacity: 1;
+          }
+        }
+      }
+  }
+
+  .pagination__next {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: rotate(180deg);
+
+      svg {
+        path {
+          transition: all 0.3s ease;
+        }
+      }
+
+      &:hover {
+        svg {
+          path {
+            stroke: #292D32;
+            stroke-opacity: 1;
+          }
+        }
+      }
+  }
+
+  &__list {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 100%;
+    color: #2C2C2C;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+
+    &:hover {
+    text-decoration: underline;
+    }
+
+    &.active {
+      background: #586C5C;
+      color: c.$white;
+    }
+  }
+}
+
+.side-menu {
+  &.sub-catalog {
+    @media (max-width: 650px) {
+      display: none;
+    }
   }
 }

@@ -164,12 +164,12 @@ export function SlidersInit() {
                         slidesPerView: 4,
                         spaceBetween: 4,
                         grid: {
-                            rows: 2
+                            rows: 0
                         },
                         allowTouchMove: false,
                         simulateTouch: false
                     },
-                    768: {
+                    701: {
                         slidesPerView: 6,
                         spaceBetween: 4,
                         grid: {

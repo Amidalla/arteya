@@ -124,6 +124,10 @@ h3 {
     scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
     padding-bottom: 3px;
 
+    @media (max-width: 1299px) {
+      padding-top: 20px;
+    }
+
     &::-webkit-scrollbar {
       height: 2px;
       margin-top: 3px;
