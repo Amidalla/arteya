@@ -170,6 +170,11 @@ header {
       0 0 0.05em 0.1em inset rgba(255, 255, 255, 0.5),
       0 0 0 0 rgba(255, 255, 255, 1);
 
+      @media (max-width: 1299px) {
+       transform: scale(1);
+        box-shadow: none;
+      }
+
       &::before {
         opacity: 1;
         animation: shine 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
