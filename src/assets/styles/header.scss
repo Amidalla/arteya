@@ -157,7 +157,7 @@ header {
         display: none;
       }
     }
-
+/*
     &:hover {
       transform: scale(1.015);
       backdrop-filter: blur(clamp(0.25px, 0.03125em, 1px));
@@ -183,7 +183,7 @@ header {
       &::after {
         --angle-1: -125deg;
       }
-    }
+    }*/
 
     @keyframes shine {
       0% {

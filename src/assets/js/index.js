@@ -4,6 +4,7 @@ import "../styles/header.scss";
 import "../styles/footer.scss";
 import "../styles/home.scss";
 import "../styles/catalog.scss";
+import "../styles/portfolio.scss";
 import "../styles/modals.scss";
 import LazyLoad from "vanilla-lazyload";
 import Swiper from 'swiper';
@@ -20,6 +21,64 @@ import { InitSideMenu } from './side-menu.js';
 
 Swiper.use([Pagination, Navigation, Autoplay, Thumbs, EffectFade]);
 
+function initProjectDescription() {
+    const descriptionBlocks = document.querySelectorAll('.specification');
+
+    descriptionBlocks.forEach(block => {
+        const paragraph = block.querySelector('p');
+        const toggleLink = block.querySelector('.portfolio__link');
+
+        if (paragraph && toggleLink) {
+
+            const newToggleLink = toggleLink.cloneNode(true);
+            toggleLink.parentNode.replaceChild(newToggleLink, toggleLink);
+
+
+            const checkHeight = () => {
+                if (paragraph.scrollHeight > 168) {
+
+                    paragraph.classList.add('collapsed');
+                    paragraph.style.maxHeight = '168px';
+                    paragraph.style.overflow = 'hidden';
+
+
+                    newToggleLink.style.display = 'inline-block';
+                    newToggleLink.textContent = 'Развернуть';
+
+                    return true;
+                } else {
+
+                    newToggleLink.style.display = 'none';
+                    paragraph.classList.remove('collapsed');
+                    paragraph.style.maxHeight = '';
+                    return false;
+                }
+            };
+
+
+            const needsCollapse = checkHeight();
+
+            if (needsCollapse) {
+
+                newToggleLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    if (paragraph.classList.contains('collapsed')) {
+
+                        paragraph.classList.remove('collapsed');
+                        paragraph.style.maxHeight = paragraph.scrollHeight + 'px';
+                        newToggleLink.textContent = 'Свернуть';
+                    } else {
+
+                        paragraph.classList.add('collapsed');
+                        paragraph.style.maxHeight = '168px';
+                        newToggleLink.textContent = 'Развернуть';
+                    }
+                });
+            }
+        }
+    });
+}
 function initRedStarsInPlaceholders() {
     const requiredInputs = document.querySelectorAll('input[required], textarea[required]');
 
@@ -225,6 +284,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
+    initProjectDescription();
+
     initRedStarsInPlaceholders();
 
     initPhoneMasks();
@@ -244,12 +305,18 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', function() {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(handleResize, 250);
+
+
+        initProjectDescription();
     });
 
     document.addEventListener('contentLoaded', function() {
         if (window.innerWidth > 1299) {
             AOS.refresh();
         }
+
+
+        initProjectDescription();
     });
 });
 
