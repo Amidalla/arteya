@@ -310,6 +310,10 @@
     height: 444px;
     width: 100%;
 
+    .swiper-slide {
+      background: c.$white;
+    }
+
     @media (max-width: 550px) {
       height: 344px;
     }
@@ -330,6 +334,10 @@
 
   .catalog-slider__thumbs {
     margin-right: -4px;
+
+    .swiper-slide {
+      background: c.$white;
+    }
 
     @media (max-width: 700px) {
       margin-right: 0;
@@ -608,6 +616,16 @@
     height: 24px;
     transform: scale(0);
     transition: all 0.5s ease;
+
+    svg {
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      svg {
+        transform: scale(1.1);
+      }
+    }
   }
 
   &__item {

@@ -6,6 +6,11 @@
   padding-bottom: 36px;
   background: #F9F9F9;
 
+  @media (max-width: 1299px) {
+    padding-top: 30px;
+    padding-bottom: 22px;
+  }
+
   @media (max-width: 1000px) {
     padding-top: 20px;
     padding-bottom: 12px;

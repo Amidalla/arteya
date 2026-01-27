@@ -5,6 +5,7 @@ import "../styles/footer.scss";
 import "../styles/home.scss";
 import "../styles/catalog.scss";
 import "../styles/portfolio.scss";
+import "../styles/product-card.scss";
 import "../styles/modals.scss";
 import LazyLoad from "vanilla-lazyload";
 import Swiper from 'swiper';
@@ -18,6 +19,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { InitMobileMenu } from './modals.js';
 import { InitSideMenu } from './side-menu.js';
+import { initCustomSelects } from './custom-selects.js';
 
 Swiper.use([Pagination, Navigation, Autoplay, Thumbs, EffectFade]);
 
@@ -289,6 +291,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initRedStarsInPlaceholders();
 
     initPhoneMasks();
+
+    initCustomSelects();
 
     Fancybox.bind("[data-fancybox]", {
         Thumbs: false,
