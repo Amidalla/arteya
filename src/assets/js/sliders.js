@@ -345,4 +345,53 @@ export function SlidersInit() {
             }
         });
     }
+
+    const comparisonSlider = document.querySelector('.comparison__slider');
+
+    if (comparisonSlider) {
+        new Swiper(comparisonSlider, {
+
+            slidesPerView: 3,
+            spaceBetween: 12,
+            loop: false,
+            speed: 500,
+            autoplay: false,
+
+            watchOverflow: true,
+            watchSlidesProgress: true,
+            centeredSlides: false,
+
+            pagination: false,
+            navigation: false,
+
+            breakpoints: {
+                0: {
+                    slidesPerView: 1.2,
+                    spaceBetween: 12,
+                },
+                430: {
+                    slidesPerView: 1.5,
+                    spaceBetween: 12,
+                },
+                500: {
+                    slidesPerView: 1.5,
+                    spaceBetween: 12,
+                },
+
+                1050: {
+                    slidesPerView: 1.5,
+                    spaceBetween: 12,
+                },
+                1299: {
+                    slidesPerView: 2.3,
+                    spaceBetween: 20,
+                },
+                1400: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                }
+            },
+
+        });
+    }
 }

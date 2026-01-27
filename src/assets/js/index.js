@@ -6,6 +6,7 @@ import "../styles/home.scss";
 import "../styles/catalog.scss";
 import "../styles/portfolio.scss";
 import "../styles/product-card.scss";
+import "../styles/comparison.scss";
 import "../styles/modals.scss";
 import LazyLoad from "vanilla-lazyload";
 import Swiper from 'swiper';
