@@ -383,9 +383,14 @@
 }
 
 .counter {
+  padding: 12px;
+  width: 115px;
+  border: 1px solid c.$green;
+
   .quantity-counter {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 
   .counter-btn {
@@ -400,6 +405,7 @@
     border: none;
     padding: 0;
     transition: transform 0.3s ease, background-color 0.3s ease;
+    flex-shrink: 0;
 
 
     &:hover:not(.product-item-amount-field-btn-disabled) {

@@ -104,16 +104,8 @@
     align-items: center;
     justify-content: center;
     padding: 12px 24px;
-    max-width: 347px;
+    max-width: 285px;
     margin: 0 auto;
-    gap: 4px;
-
-    @media (max-width: 1299px) {
-      span {
-        display: none;
-      }
-    }
-
 
     @media (max-width: 1000px) {
       max-width: 255px;

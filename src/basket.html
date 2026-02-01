@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
+<include src="layout/head.html"></include>
+<body>
+<svg style="position: absolute; width: 100%; height: 100%; z-index: 0;" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100%" height="100%" fill="url(#dottedGrid)" />
+</svg>
+<include src="layout/header.html"></include>
+<main class="inside-page">
+    <div class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb__inner">
+                <ul class="breadcrumb__list">
+                    <li class="breadcrumb__item">
+                        <a href="#" class="breadcrumb__link">Главная</a>
+                    </li>
+                    <li class="breadcrumb__item active">
+                        <a href="#" class="breadcrumb__link">Корзина</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <section class="basket">
+        <div class="container">
+            <div class="inside-page-title basket__title">
+                <h1> Корзина</h1>
+                <div class="basket__buttons">
+                    <button class="clear-btn">Очистить</button>
+                    <a href="#" class="color-btn continue-btn">Продолжить покупки</a>
+                </div>
+            </div>
+            <div class="basket__inner">
+                 <div class="products-table">
+                      <div class="products-table__row name-row">
+                          <div class="products-table__item table-img">Фото</div>
+                          <div class="products-table__item table-text">Наименование</div>
+                          <div class="products-table__item table-price">Цена</div>
+                          <div class="products-table__item table-counter">Кол-во</div>
+                          <div class="products-table__item table-sum">Сумма</div>
+                          <div class="products-table__item table-remove"></div>
+                      </div>
+                     <div class="products-table__row card-row">
+                         <div class="products-table__item table-img">
+                             <a href="#">
+                                <img class="lazy"  data-src="assets/images/sub-catalog1.jpg" alt="">
+                             </a>
+                         </div>
+                         <div class="products-table__item table-text">
+                             <p class="table-title"><a href="#">Onix Direct Стол рабочий руководителя на О-образном Onix Direct Стол рабочий руководителя на О-образном</a></p>
+                             <span class="article-number">Арт.: O.MO-SRR-3.8</span>
+                             <span class="size">Размер: 1380*800*750 мм</span>
+                             <span class="color">Цвет: Антрацит / Металл Белый / Заглушка Пластик Белый</span>
+                         </div>
+                         <div class="products-table__item table-price" >
+                            9 150 ₽
+                         </div>
+                         <div class="products-table__item table-counter">
+                             <div class="counter">
+                                 <div class="quantity-counter" data-entity="quantity-block">
+                                     <button class="counter-btn counter-minus counter-btn__minus product-item-amount-field-btn-disabled" type="button" aria-label="Уменьшить количество">
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="10" height="2" viewBox="0 0 10 2" fill="none">
+                                             <path d="M8.75 1.5H0.75C0.34 1.5 0 1.16 0 0.75C0 0.34 0.34 0 0.75 0H8.75C9.16 0 9.5 0.34 9.5 0.75C9.5 1.16 9.17 1.5 8.75 1.5Z" fill="#586C5C" fill-opacity="0.4"></path>
+                                         </svg>
+                                     </button>
+                                     <div class="product-item-amount-field-block">
+                                         <input class="product-item-amount-field" type="number" name="quantity" value="1">
+                                     </div>
+                                     <button class="counter-btn counter-plus counter-btn__plus" type="button" aria-label="Увеличить количество">
+                                         <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                             <path d="M8.75 4H5.5V0.75C5.5 0.34 5.16 0 4.75 0C4.34 0 4 0.34 4 0.75V4H0.75C0.34 4 0 4.34 0 4.75C0 5.16 0.34 5.5 0.75 5.5H4V8.75C4 9.16 4.34 9.5 4.75 9.5C5.16 9.5 5.5 9.16 5.5 8.75V5.5H8.75C9.16 5.5 9.5 5.16 9.5 4.75C9.5 4.34 9.16 4 8.75 4Z" fill="#586C5C"></path>
+                                         </svg>
+                                     </button>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="products-table__item table-sum">
+                            9 150 ₽
+                         </div>
+                         <div class="products-table__item table-remove">
+                             <a href="#" class="product-remove">Удалить</a>
+                         </div>
+                     </div>
+                     <div class="products-table__row card-row">
+                         <div class="products-table__item table-img">
+                             <a href="#">
+                                 <img class="lazy"  data-src="assets/images/sub-catalog1.jpg" alt="">
+                             </a>
+                         </div>
+                         <div class="products-table__item table-text">
+                             <p class="table-title"><a href="#">Onix Direct Стол рабочий руководителя на О-образном Onix Direct Стол рабочий руководителя на О-образном</a></p>
+                             <span class="article-number">Арт.: O.MO-SRR-3.8</span>
+                             <span class="size">Размер: 1380*800*750 мм</span>
+                             <span class="color">Цвет: Антрацит / Металл Белый / Заглушка Пластик Белый</span>
+                         </div>
+                         <div class="products-table__item table-price" >
+                             9 150 ₽
+                         </div>
+                         <div class="products-table__item table-counter">
+                             <div class="counter">
+                                 <div class="quantity-counter" data-entity="quantity-block">
+                                     <button class="counter-btn counter-minus counter-btn__minus product-item-amount-field-btn-disabled" type="button" aria-label="Уменьшить количество">
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="10" height="2" viewBox="0 0 10 2" fill="none">
+                                             <path d="M8.75 1.5H0.75C0.34 1.5 0 1.16 0 0.75C0 0.34 0.34 0 0.75 0H8.75C9.16 0 9.5 0.34 9.5 0.75C9.5 1.16 9.17 1.5 8.75 1.5Z" fill="#586C5C" fill-opacity="0.4"></path>
+                                         </svg>
+                                     </button>
+                                     <div class="product-item-amount-field-block">
+                                         <input class="product-item-amount-field" type="number" name="quantity" value="1">
+                                     </div>
+                                     <button class="counter-btn counter-plus counter-btn__plus" type="button" aria-label="Увеличить количество">
+                                         <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                             <path d="M8.75 4H5.5V0.75C5.5 0.34 5.16 0 4.75 0C4.34 0 4 0.34 4 0.75V4H0.75C0.34 4 0 4.34 0 4.75C0 5.16 0.34 5.5 0.75 5.5H4V8.75C4 9.16 4.34 9.5 4.75 9.5C5.16 9.5 5.5 9.16 5.5 8.75V5.5H8.75C9.16 5.5 9.5 5.16 9.5 4.75C9.5 4.34 9.16 4 8.75 4Z" fill="#586C5C"></path>
+                                         </svg>
+                                     </button>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="products-table__item table-sum">
+                             9 150 ₽
+                         </div>
+                         <div class="products-table__item table-remove">
+                             <a href="#" class="product-remove">Удалить</a>
+                         </div>
+                     </div>
+                 </div>
+                <div class="table-result">Итого: <span>21 690 ₽</span></div>
+            </div>
+            <div class="basket__form">
+                <h2>Оформление заказа</h2>
+                <p class="basket__info">В ближайшее время после отправки заказа с вами свяжется менеджер
+                    для подтверждения заказа, расчета стоимости и сроков доставки.</p>
+                <p class="basket__additional-info">Данные, указанные в форме, не будут использоваться
+                    для рассылок и необходимы только для обсуждения заказа с уведомлениями о ходе его выполнения.</p>
+                <form class="form-basket">
+                    <fieldset>
+                        <label>
+                            <input type="text" name="name" placeholder="Организация" required>
+                        </label>
+                        <div class="upload-file">
+                            <a href="#" onclick="document.getElementById('fileInput').click(); return false;">
+                                Прикрепить файл с реквизитами
+                            </a>
+                            <input type="file" id="fileInput" style="display: none;">
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <label>
+                            <input type="text" name="name" placeholder="Имя" required>
+                        </label>
+                        <label>
+                            <input type="email" name="email" placeholder="Электронная почта" required>
+                        </label>
+                        <label>
+                            <input type="tel" name="tel" placeholder="Ваш номер телефона" data-phone-input="" required="">
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="checkbox">
+                            <span class="checkbox-text">
+                                <span>Требуется доставка</span>
+                            </span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="checkbox">
+                            <span class="checkbox-text">
+                                <span>Требуется сборка</span>
+                            </span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="checkbox" required="">
+                            <span class="checkbox-text">
+                            <span>Я подтверждаю своё согласие на <a href="#">обработку персональных данных</a> в соответствии с <a href="#">политикой конфиденциальности</a></span>
+                        </span>
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <button class="submit-btn color-btn">
+                            Оформить заказ
+                        </button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+<include src="layout/footer.html"></include>
+<include src="layout/modals.html"></include>
+</body>
+</html>
