@@ -5,6 +5,8 @@
   background: c.$green;
   padding-top: 60px;
   padding-bottom: 60px;
+  position: relative;
+  z-index: 1;
 
   @media (max-width: 1050px) {
     padding-top: 48px;

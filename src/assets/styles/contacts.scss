@@ -1,0 +1,126 @@
+@use "./colors.scss" as c;
+@use "../styles/mixins.scss" as *;
+
+.page-contacts {
+  padding-top: 44px;
+  padding-bottom: 44px;
+  background: #F9F9F9;
+
+  @media (max-width: 1299px) {
+    padding-top: 30px;
+  }
+
+  @media (max-width: 1000px) {
+    padding-top: 20px;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+
+    @media (max-width: 1299px) {
+      display: flex;
+      flex-direction: column;
+      gap: 21px;
+    }
+  }
+
+  &__map {
+    iframe {
+      width: 100%;
+      height: 824px;
+
+      @media (max-width: 1299px) {
+        height: 420px;
+      }
+    }
+  }
+
+  &__address {
+    padding-bottom: 21px;
+    border-bottom: 1px solid #0000001A;
+
+    p {
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: #000000;
+
+      &:not(:last-child) {
+          margin-bottom: 20px;
+      }
+
+      a {
+        color: #000000;
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: c.$green;
+        }
+      }
+    }
+  }
+
+  &__details {
+    padding-top: 21px;
+    padding-bottom: 21px;
+    border-bottom: 1px solid #0000001A;
+
+    p {
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: #000000;
+    }
+  }
+
+  &__form {
+    padding-top: 21px;
+
+    .form-contacts {
+      fieldset {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        input[type=text],
+        input[type=email] {
+          width: 100%;
+          height: 48px;
+          padding: 12px;
+          font-family: "Montserrat", sans-serif;
+          font-size: 16px;
+          font-weight: 300;
+          line-height: 24px;
+          color: #5b5b5b;
+          border: 1px solid #586c5c;
+          transition: all .5s ease;
+        }
+
+        textarea {
+          width: 100%;
+          height: 96px;
+          padding: 12px;
+          font-family: "Montserrat", sans-serif;
+          font-size: 16px;
+          font-weight: 300;
+          line-height: 24px;
+          color: #5b5b5b;
+          border: 1px solid #586c5c;
+          transition: all .5s ease;
+        }
+
+        input[type=text]:focus,
+        input[type=email]:focus,
+        textarea:focus {
+          transform: translateX(8px);
+        }
+
+      }
+    }
+  }
+
+}

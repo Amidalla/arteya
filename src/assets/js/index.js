@@ -9,6 +9,7 @@ import "../styles/product-card.scss";
 import "../styles/comparison.scss";
 import "../styles/basket.scss";
 import "../styles/about.scss";
+import "../styles/contacts.scss";
 import "../styles/modals.scss";
 import LazyLoad from "vanilla-lazyload";
 import Swiper from 'swiper';

@@ -299,6 +299,12 @@
   flex-direction: column;
   gap: 20px;
 
+  input[type=text]:focus,
+  input[type=email]:focus,
+  input[type=tel]:focus {
+    transform: translateX(8px);
+  }
+
   fieldset {
     display: flex;
     align-items: center;
