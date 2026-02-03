@@ -93,3 +93,145 @@
     }
   }
 }
+
+.account-detail {
+  padding-top: 44px;
+  padding-bottom: 44px;
+  background: #F9F9F9;
+
+  @media (max-width: 1299px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  @media (max-width: 1000px) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+
+    @media (max-width: 1299px) {
+      margin-bottom: 20px;
+      flex-direction: column;
+      align-items: start;
+    }
+  }
+
+  &__name {
+    display: flex;
+    align-items: center;
+
+    h1 {
+      margin-bottom: 0 !important;
+    }
+
+    svg {
+      @media (max-width: 1299px) {
+        width: 36px;
+        height: 36px;
+      }
+    }
+  }
+
+  &__info {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #2C2C2C;
+
+    @media (max-width: 1299px) {
+      padding-left: 36px;
+    }
+
+    span {
+      color: rgba(44, 44, 44, 0.6);
+    }
+  }
+
+  .products-table {
+    .not-available {
+      opacity: 0.4;
+
+      &:hover {
+        box-shadow: none;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.07) 100%);
+      }
+
+     .table-text a {
+        text-decoration: line-through;
+      }
+    }
+    .card-row .table-remove a {
+
+      &.product-no {
+        color: #2C2C2C;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+
+    @media (max-width: 550px) {
+      flex-direction: column;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.snooze-btn {
+  padding: 12px 24px;
+  cursor: pointer;
+}
+
+.recent-history {
+  margin-top: 40px;
+
+  h2 {
+    text-align: left;
+  }
+
+  .sub-catalog {
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 12px;
+      row-gap: 40px;
+      margin: 0;
+      
+      @media (max-width: 1299px) {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 20px;
+      }
+      
+      @media (max-width: 850px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (max-width: 550px) {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+      }
+    }
+
+    &__item {
+      &:nth-child(n+4) {
+        @media (max-width: 550px) {
+          display: none;
+        }
+      }
+    }
+  }
+}

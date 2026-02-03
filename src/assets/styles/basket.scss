@@ -89,6 +89,11 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  
+  @media (max-width: 450px) {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
 
   &__row {
     display: flex;
@@ -135,7 +140,7 @@
       @media (max-width: 1299px) {
         grid-column: 2;
         grid-row: 3;
-        width: 50%;
+        width: 45%;
         justify-self: start;
         max-width: 100%;
       }
@@ -174,7 +179,7 @@
       @media (max-width: 1299px) {
         grid-column: 2;
         grid-row: 3;
-        width: 50%;
+        width: 55%;
         justify-self: end;
         text-align: right;
       }
@@ -265,8 +270,8 @@
         line-height: 24px;
         color: #336C15;
         text-decoration: underline;
-        
-        @media (max-width: 1299px) {
+
+        &.product-remove {
           color: #FF0000;
         }
 
