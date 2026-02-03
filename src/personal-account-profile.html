@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
+<include src="layout/head.html"></include>
+<body>
+<svg style="position: absolute; width: 100%; height: 100%; z-index: 0;" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100%" height="100%" fill="url(#dottedGrid)" />
+</svg>
+<include src="layout/header.html"></include>
+<main class="inside-page">
+    <div class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb__inner">
+                <ul class="breadcrumb__list">
+                    <li class="breadcrumb__item">
+                        <a href="#" class="breadcrumb__link">Главная</a>
+                    </li>
+                    <li class="breadcrumb__item">
+                        <a href="#" class="breadcrumb__link">Личный кабинет</a>
+                    </li>
+                    <li class="breadcrumb__item active">
+                        <a href="#" class="breadcrumb__link">Профиль</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <section class="personal-account">
+        <div class="container">
+            <div class="inside-page-title">
+                <h1>Профиль</h1>
+            </div>
+            <div class="personal-account__inner">
+                <div class="personal-account__left">
+                    <ul class="side-additional-list">
+                        <li class="side-additional-item">
+                            <a href="#" class="side-additional-link">Мои заказы</a>
+                        </li>
+                        <li class="side-additional-item">
+                            <a href="#" class="side-additional-link active">Профиль</a>
+                        </li>
+                        <li class="side-additional-item">
+                            <a href="#" class="side-additional-link">Выйти</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="personal-account__right">
+                    <form class="personal-account__form">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="name">Имя</label>
+                                <input type="text" id="name" name="name" placeholder="Вячеслав">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Электронная почта</label>
+                                <input type="email" id="email" name="email" placeholder="digitalcompany@gmail.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="tel">Номер телефона</label>
+                                <input type="tel" id="tel" name="tel" data-phone-input="" placeholder="+7 (913) 611-79-27">
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="organization">Организация</label>
+                                <input type="text" id="organization" name="organization" placeholder="АО ДиджиталКомпани" autocomplete="organization">
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="password">Новый пароль</label>
+                                <input type="password" name="password" id="password"  autocomplete="current-password" >
+                            </div>
+                            <div class="form-group">
+                                <label for="password-confirmation">Повтор нового пароля</label>
+                                <input type="password" name="password-confirmation" id="password-confirmation"  autocomplete="current-password" >
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <button class="submit-btn color-btn">
+                                Сохранить
+                            </button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<include src="layout/footer.html"></include>
+<include src="layout/modals.html"></include>
+</body>
+</html>

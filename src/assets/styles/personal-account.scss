@@ -92,6 +92,65 @@
       }
     }
   }
+
+  &__form {
+    background: c.$white;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    label {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 24px;
+      color: rgba(44, 44, 44, 0.6);
+    }
+
+    fieldset {
+      &:first-child,
+      &:nth-child(3) {
+        display: flex;
+        gap: 20px;
+
+        @media (max-width: 800px) {
+          flex-direction: column;
+        }
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 0;
+
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="password"]{
+        width: 100%;
+        height: 48px;
+        padding: 12px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        color: #5B5B5B;
+        border: 1px solid #586c5c;
+        transition: all 0.5s ease;
+        background: #FFFFFF;
+      }
+
+      input[type="text"]::placeholder,
+      input[type="email"]::placeholder,
+      input[type="tel"]::placeholder,
+      input[type="password"]::placeholder {
+        color: #5B5B5B;
+        opacity: 1;
+      }
+    }
+  }
 }
 
 .account-detail {
