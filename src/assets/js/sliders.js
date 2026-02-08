@@ -295,7 +295,7 @@ export function SlidersInit() {
                 const nextBtn = catalogSlider.querySelector('.catalog-slider__nav--next');
                 const prevBtn = catalogSlider.querySelector('.catalog-slider__nav--prev');
 
-                // Убрали grid настройки и изменили поведение на стандартный скролл
+
                 const thumbsSlider = new Swiper(thumbsSliderEl, {
                     slidesPerView: 'auto',
                     spaceBetween: 4,
@@ -347,8 +347,7 @@ export function SlidersInit() {
                     }
                 });
 
-                // Убираем ручное управление кликами по thumbnails, так как теперь Swiper сам это делает
-                // Оставляем только добавление класса active
+
                 const thumbSlides = thumbsSliderEl.querySelectorAll('.swiper-slide');
 
                 mainSlider.on('slideChange', () => {
@@ -356,7 +355,7 @@ export function SlidersInit() {
                     thumbSlides.forEach((slide, index) => {
                         if (index === activeIndex) {
                             slide.classList.add('active');
-                            // Прокручиваем thumbs слайдер к активному слайду
+
                             thumbsSlider.slideTo(index);
                         } else {
                             slide.classList.remove('active');
