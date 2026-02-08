@@ -86,12 +86,12 @@
                     </div>
                 </div>
                 <div class="swiper-slide">
-                    <img class="lazy" data-src="assets/images/hero1.jpg" alt="'">
+                    <img class="lazy" data-src="assets/images/main-slide2.jpg" alt="'">
                     <div class="hero__content">
                         <p class="hero__title">Создаём<br>
                             офисное пространство</p>
                         <p class="hero__text">Какой-то подстрочник</p>
-                        <a href="#" class="hero__btn color-btn order-button">Заказать дизайн-проект <span>бесплатно</span></a>
+                        <a href="#" class="hero__btn color-btn order-button">Заказать дизайн-проект</a>
                     </div>
                 </div>
                 <div class="swiper-slide">
@@ -102,7 +102,7 @@
                             офисное пространство
                         </p>
                         <p class="hero__text">Какой-то подстрочник</p>
-                        <a href="#" class="hero__btn color-btn order-button">Заказать дизайн-проект <span>бесплатно</span></a>
+                        <a href="#" class="hero__btn color-btn order-button">Заказать дизайн-проект</a>
                     </div>
                 </div>
             </div>
@@ -261,38 +261,70 @@
     <section class="section design-project" data-aos="fade-up">
         <div class="container">
             <h2>Дизайн-проекты</h2>
-            <ul class="design-project__list">
-                <include src="layout/template/card/design-project-card.html">
-                    {
-                    "link": "#",
-                    "title": "Отдел продаж компании по продаже судового оборудования",
-                    "description": "Экспертная команда ARTEYA разработала концепцию офисного пространства отдела продаж судового оборудования и реализовала дизайн-проект согласно брендбуку заказчика с учетом всех пожеланий. Были подобраны: мебель для персонала серии ONIX, системы хранения серии SHELF SYSTEM, мягкая мебель серии FOREST, компьютерные кресла Hugo и стулья Самба.",
-                    "image1": "assets/images/design-project1.jpg",
-                    "image2": "assets/images/design-project2.jpg",
-                    "image3": "assets/images/design-project3.jpg"
-                    }
-                </include>
-                <include src="layout/template/card/design-project-card.html">
-                    {
-                    "link": "#",
-                    "title": "Преображение офиса поставщика медицинского оборудования",
-                    "description": "В разработку гармоничного офисного пространство компании, которая занимается поставками медицинского в Северно-Западном регионе вошли несколько кабинетов для персонала, кабинет руководителя и комната отдыха, а также ресепшен. В дизайн проекте представлена серия CORNER - кабинет руководителя, серия ONIX - ресепшн и мебель для персонала, серии FOREST - мягкая мебель.",
-                    "image1": "assets/images/design-project2.jpg",
-                    "image2": "assets/images/design-project1.jpg",
-                    "image3": "assets/images/design-project3.jpg"
-                    }
-                </include>
-                <include src="layout/template/card/design-project-card.html">
-                    {
-                    "link": "#",
-                    "title": "Представительский кабинет руководителя оборонного предприятия",
-                    "description": "Компания ARTEYA помогла обустроить комфортный и стильный кабинет руководителя для оборонного предприятия. В проекте была использована коллекция мебели серии YALTA: стол руководителя с брифинг приставкой и кресло Fait, мобильные и модульные тумбы, шкафы для хранения документов, гардеробный шкаф, стол для переговорных зон и стулья Самба.",
-                    "image1": "assets/images/design-project3.jpg",
-                    "image2": "assets/images/design-project1.jpg",
-                    "image3": "assets/images/design-project2.jpg"
-                    }
-                </include>
-            </ul>
+            <div class="new-design-slider swiper">
+                <ul class="design-project__list swiper-wrapper">
+                    <include src="layout/template/card/design-project-card.html">
+                        {
+                        "link": "#",
+                        "title": "Отдел продаж компании по продаже судового оборудования",
+                        "description": "Экспертная команда ARTEYA разработала концепцию офисного пространства отдела продаж судового оборудования и реализовала дизайн-проект согласно брендбуку заказчика с учетом всех пожеланий. Были подобраны: мебель для персонала серии ONIX, системы хранения серии SHELF SYSTEM, мягкая мебель серии FOREST, компьютерные кресла Hugo и стулья Самба.",
+                        "image1": "assets/images/design-project1.jpg",
+                        "image2": "assets/images/scheme.jpg",
+                        "image3": "assets/images/design-project3.jpg"
+                        }
+                    </include>
+                    <include src="layout/template/card/design-project-card.html">
+                        {
+                        "link": "#",
+                        "title": "Преображение офиса поставщика медицинского оборудования",
+                        "description": "В разработку гармоничного офисного пространство компании, которая занимается поставками медицинского в Северно-Западном регионе вошли несколько кабинетов для персонала, кабинет руководителя и комната отдыха, а также ресепшен. В дизайн проекте представлена серия CORNER - кабинет руководителя, серия ONIX - ресепшн и мебель для персонала, серии FOREST - мягкая мебель.",
+                        "image1": "assets/images/design-project2.jpg",
+                        "image2": "assets/images/scheme.jpg",
+                        "image3": "assets/images/design-project3.jpg"
+                        }
+                    </include>
+                    <include src="layout/template/card/design-project-card.html">
+                        {
+                        "link": "#",
+                        "title": "Представительский кабинет руководителя оборонного предприятия",
+                        "description": "Компания ARTEYA помогла обустроить комфортный и стильный кабинет руководителя для оборонного предприятия. В проекте была использована коллекция мебели серии YALTA: стол руководителя с брифинг приставкой и кресло Fait, мобильные и модульные тумбы, шкафы для хранения документов, гардеробный шкаф, стол для переговорных зон и стулья Самба.",
+                        "image1": "assets/images/design-project3.jpg",
+                        "image2": "assets/images/scheme.jpg",
+                        "image3": "assets/images/design-project2.jpg"
+                        }
+                    </include>
+                    <include src="layout/template/card/design-project-card.html">
+                        {
+                        "link": "#",
+                        "title": "Отдел продаж компании по продаже судового оборудования",
+                        "description": "Экспертная команда ARTEYA разработала концепцию офисного пространства отдела продаж судового оборудования и реализовала дизайн-проект согласно брендбуку заказчика с учетом всех пожеланий. Были подобраны: мебель для персонала серии ONIX, системы хранения серии SHELF SYSTEM, мягкая мебель серии FOREST, компьютерные кресла Hugo и стулья Самба.",
+                        "image1": "assets/images/design-project1.jpg",
+                        "image2": "assets/images/scheme.jpg",
+                        "image3": "assets/images/design-project3.jpg"
+                        }
+                    </include>
+                    <include src="layout/template/card/design-project-card.html">
+                        {
+                        "link": "#",
+                        "title": "Преображение офиса поставщика медицинского оборудования",
+                        "description": "В разработку гармоничного офисного пространство компании, которая занимается поставками медицинского в Северно-Западном регионе вошли несколько кабинетов для персонала, кабинет руководителя и комната отдыха, а также ресепшен. В дизайн проекте представлена серия CORNER - кабинет руководителя, серия ONIX - ресепшн и мебель для персонала, серии FOREST - мягкая мебель.",
+                        "image1": "assets/images/design-project2.jpg",
+                        "image2": "assets/images/scheme.jpg",
+                        "image3": "assets/images/design-project3.jpg"
+                        }
+                    </include>
+                    <include src="layout/template/card/design-project-card.html">
+                        {
+                        "link": "#",
+                        "title": "Представительский кабинет руководителя оборонного предприятия",
+                        "description": "Компания ARTEYA помогла обустроить комфортный и стильный кабинет руководителя для оборонного предприятия. В проекте была использована коллекция мебели серии YALTA: стол руководителя с брифинг приставкой и кресло Fait, мобильные и модульные тумбы, шкафы для хранения документов, гардеробный шкаф, стол для переговорных зон и стулья Самба.",
+                        "image1": "assets/images/design-project3.jpg",
+                        "image2": "assets/images/scheme.jpg",
+                        "image3": "assets/images/design-project2.jpg"
+                        }
+                    </include>
+                </ul>
+            </div>
         </div>
     </section>
     <section class="partners" data-aos="fade-up">
@@ -323,6 +355,26 @@
             </ul>
             <div class="recommendations recommendations__slider swiper">
                 <ul class="recommendations__list swiper-wrapper">
+                    <li class="recommendations__item swiper-slide">
+                        <a href="assets/images/recommendations1.png" data-fancybox="gallery">
+                            <img class="lazy" data-src="assets/images/recommendations1.png" alt="">
+                        </a>
+                    </li>
+                    <li class="recommendations__item swiper-slide">
+                        <a href="assets/images/recommendations2.png" data-fancybox="gallery">
+                            <img class="lazy" data-src="assets/images/recommendations2.png" alt="">
+                        </a>
+                    </li>
+                    <li class="recommendations__item swiper-slide">
+                        <a href="assets/images/recommendations3.png" data-fancybox="gallery">
+                            <img class="lazy" data-src="assets/images/recommendations3.png" alt="">
+                        </a>
+                    </li>
+                    <li class="recommendations__item swiper-slide">
+                        <a href="assets/images/recommendations4.png" data-fancybox="gallery">
+                            <img class="lazy" data-src="assets/images/recommendations4.png" alt="">
+                        </a>
+                    </li>
                     <li class="recommendations__item swiper-slide">
                         <a href="assets/images/recommendations1.png" data-fancybox="gallery">
                             <img class="lazy" data-src="assets/images/recommendations1.png" alt="">
