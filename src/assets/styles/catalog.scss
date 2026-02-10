@@ -483,6 +483,7 @@
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
 
     &::after {
       content: attr(data-tooltip);
@@ -531,8 +532,9 @@
     }
 
     &:hover {
-
-      transform: scale(1.1);
+      img {
+        transform: scale(1.1);
+      }
 
 
       &::after {
