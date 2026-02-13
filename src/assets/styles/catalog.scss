@@ -714,6 +714,33 @@
         transform: translateY(-50%) translateX(4px);
       }
     }
+
+    @media (max-width: 1299px) {
+      opacity: 1;
+      transform: scale(1);
+
+      &::after {
+        opacity: 0.5;
+        visibility: visible;
+        transform: translateY(-50%) translateX(0);
+      }
+
+      &::before {
+        opacity: 0.5;
+        visibility: visible;
+        transform: translateY(-50%) translateX(4px);
+      }
+
+      &:hover {
+        &::after {
+          opacity: 0.5;
+        }
+
+        &::before {
+          opacity: 0.5;
+        }
+      }
+    }
   }
 
   &__item {
