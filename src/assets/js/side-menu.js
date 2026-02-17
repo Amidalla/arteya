@@ -160,7 +160,7 @@ export function InitSideMenu() {
 
     document.addEventListener('click', function(e) {
         if (!sideMenu.contains(e.target)) {
-            // Закрываем все основные меню
+
             document.querySelectorAll('.side-menu__link.active').forEach(link => {
                 const parentItem = link.closest('.side-menu__item');
                 closeAllNestedMenus(parentItem);
